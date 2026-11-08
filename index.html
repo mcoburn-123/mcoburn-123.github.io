@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="M Coburn, learning designer in Chicago: a playable shift simulation for pantry volunteer leads and case studies in adult training, curriculum and volunteer onboarding.">
+<meta name="description" content="M Coburn, learning designer in Chicago: a playable three-minute shift simulation for pantry volunteer leads.">
 <meta property="og:title" content="M Coburn · Learning Design Portfolio">
-<meta property="og:description" content="Play a 3-minute pantry shift: a scenario-based work sample for volunteer leads, plus case studies in adult training, curriculum and volunteer onboarding.">
+<meta property="og:description" content="Play a 3-minute pantry shift: a scenario-based work sample for volunteer leads.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
 <title>M Coburn · Learning Design Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,7 +114,7 @@ header.hero .sprouts{position:absolute;left:0;right:0;bottom:-1px;width:100%;hei
 
 /* v2: game */
 .screen{overflow:clip}
-.hud{position:sticky;top:46px;z-index:3;border-radius:24px 24px 0 0;display:flex;gap:10px;align-items:center;padding:14px 16px 12px;border-bottom:1px solid var(--line);background:#fff}
+.hud{position:sticky;top:0;z-index:3;border-radius:24px 24px 0 0;display:flex;gap:10px;align-items:center;padding:14px 16px 12px;border-bottom:1px solid var(--line);background:#fff}
 .meter-wrap{flex:1}
 .meter-top{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em;margin-bottom:6px}
 .meter-top b{color:var(--soil);display:inline-block;font-variant-numeric:tabular-nums}
@@ -155,6 +155,12 @@ dialog#aid::backdrop{background:rgba(47,42,36,.45)}
 dialog#aid h4{font-family:Fraunces,Georgia,serif;font-size:22px;margin:0 0 8px}
 dialog#aid .btn{margin-top:14px;width:100%}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.meter i,.opt,.dots i,.cta{transition:none}}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:640px;margin:0 auto;text-align:center}
+.proof div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 10px;font-size:14px;color:var(--muted)}
+.proof .num{display:block;font-size:32px;margin-bottom:4px}
+@media(max-width:480px){.proof{grid-template-columns:1fr}}
+#sample h2,#sample .lede{text-align:center;margin-left:auto;margin-right:auto}
+footer{text-align:center}
 </style>
 </head>
 <body>
@@ -163,110 +169,42 @@ dialog#aid .btn{margin-top:14px;width:100%}
   <div class="wrap">
     <div class="eyebrow">Learning design portfolio</div>
     <h1>M Coburn</h1>
-    <p>I design training that people use on a busy shift: short, practical, built around the job in front of them. More than a decade of teaching and training, from high school ecology classrooms and adult permaculture certificate courses to volunteer onboarding at Green City Market.</p>
+    <p>I design short, practical training for people who learn on a busy shift.</p>
     <a class="cta" href="#sample">Play the 3-minute shift <span aria-hidden="true">→</span></a>
-    <div class="contact"><span>Chicago</span><a href="mailto:cultivate.regenerate@gmail.com" style="color:#fff">cultivate.regenerate@gmail.com</a></div>
   </div>
   <svg class="sprouts" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C200 20 400 50 600 30 S1000 10 1200 40 V60Z" fill="#fbf8f2"/></svg>
 </header>
 
-<nav class="jump"><div class="wrap">
-  <a href="#sample">Work sample</a>
-  <a href="#design">Design notes</a>
-  <a href="#cases">Case studies</a>
-  <a href="#tools">Tools</a>
-</div></nav>
-
 <main class="wrap">
 
 <section id="sample">
-  <h2>Work sample: Your First 15 Minutes</h2>
-  <p class="lede">A three-minute shift simulation for pantry and partner agency volunteer leads. It teaches one thing well: how to welcome a new volunteer so they come back. You run a Saturday shift in four rounds, and every call you make shows what happens next week. Built from the onboarding approach I used at Green City Market, rewritten for a pantry setting.</p>
-
-  <div class="grid two">
-    <div>
-      <div class="phone"><div class="screen" id="game">
-        <div class="hud">
-          <div class="meter-wrap">
-            <div class="meter-top"><span>Come-back meter</span><b id="mval">40%</b></div>
-            <div class="meter" role="progressbar" aria-label="Come-back meter, a game mechanic" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" id="meter"><i id="mfill"></i></div>
-          </div>
-          <button class="aid-btn" id="aidBtn" aria-haspopup="dialog">Job aid</button>
-        </div>
-        <div class="stage" id="stage" aria-live="polite"></div>
-        <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      </div></div>
-      <p class="note">Tap, click, or press 1–4 to choose. The meter is a game mechanic, not data.</p>
+  <h2>Your First 15 Minutes</h2>
+  <p class="lede">A three-minute shift for pantry volunteer leads. Every call you make shows what happens next Saturday: does the new volunteer come back?</p>
+  <div class="phone"><div class="screen" id="game">
+    <div class="hud">
+      <div class="meter-wrap">
+        <div class="meter-top"><span>Come-back meter</span><b id="mval">40%</b></div>
+        <div class="meter" role="progressbar" aria-label="Come-back meter, a game mechanic" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" id="meter"><i id="mfill"></i></div>
+      </div>
+      <button class="aid-btn" id="aidBtn" aria-haspopup="dialog">Job aid</button>
     </div>
+    <div class="stage" id="stage" aria-live="polite"></div>
+    <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  </div></div>
+  <p class="note">Tap, click, or press 1–4 to choose. The meter is a game mechanic, not data.</p>
+</section>
 
-    <div id="design">
-      <p class="phases" aria-label="Design process"><span>Define</span><span>Design</span><span>Deliver</span><span>Assess</span></p>
-      <div class="panel reveal">
-        <div class="tag">1 · Define</div>
-        <h3>Who it's for and what has to change</h3>
-        <dl>
-          <dt>Learners</dt>
-          <dd>Volunteer leads at pantries and partner agencies. Many are volunteers themselves. They learn between tasks, mostly on a phone, and have no time for a long module.</dd>
-          <dt>The problem</dt>
-          <dd>New volunteers who spend their first shift standing around are less likely to come back. The fix is not more information. It is a better first fifteen minutes.</dd>
-          <dt>Where the content comes from</dt>
-          <dd>The volunteer onboarding I ran at Green City Market, rewritten for a pantry. In production, I would sit with a few volunteer leads and food bank staff first, ask why the right move doesn't happen on a busy Saturday, and have them write the scenes from their own shifts.</dd>
-          <dt>Learning objectives</dt>
-          <dd>After this lesson, a volunteer lead can:
-            <ol class="obj">
-              <li>Greet a new volunteer and give them one clear job and a buddy within five minutes of arrival.</li>
-              <li>Split a large walk-in group into small crews led by returning volunteers.</li>
-              <li>Deliver a two-minute safety talk covering lifting, gloves, cold food and the first aid kit.</li>
-              <li>Close the shift by asking each new volunteer to sign up for the next one.</li>
-            </ol>
-          </dd>
-        </dl>
-      </div>
-      <div class="panel reveal">
-        <div class="tag">2 · Design</div>
-        <h3>Design decisions</h3>
-        <dl>
-          <dt>Four rounds, one per objective</dt>
-          <dd>Each round is a real moment on a Saturday shift. About three minutes total. The checklist job aid is one tap away the whole time and is the last screen.</dd>
-          <dt>Practice first, no lecture up front</dt>
-          <dd>The lesson opens on the shift, not on slides. People learn the welcome by doing it.</dd>
-          <dt>Show the consequence, skip the red X</dt>
-          <dd>Each choice jumps to next Saturday: does Dana come back? That makes the stakes real without a narrator telling people what to think.</dd>
-          <dt>Mistakes are safe</dt>
-          <dd>After any call you can try the round another way. Your first call is what moves the meter, so the score still means something.</dd>
-          <dt>One score, tied to the goal</dt>
-          <dd>No badges or leaderboard. The only number is the one a volunteer lead cares about: will people come back.</dd>
-          <dt>Built for every learner</dt>
-          <dd>Plain words and short screens. Works by touch, mouse or keyboard (keys 1 to 4). Motion only shows change, and it fades for anyone whose device is set to reduce motion. The job aid gives a second way in for people who would rather read than play. A Spanish version would be the first addition.</dd>
-        </dl>
-      </div>
-      <div class="panel reveal">
-        <div class="tag">3 · Deliver</div>
-        <h3>How it would reach leads</h3>
-        <dl>
-          <dt>Where they already are</dt>
-          <dd>A QR code on the sign-in table and the link in the shift reminder text. No app, no login.</dd>
-          <dt>Live follow-up</dt>
-          <dd>A short live virtual huddle for leads a few weeks after launch to swap their own Saturday stories. The best ones become new rounds, so the lesson keeps growing with the network.</dd>
-          <dt>Authoring tools</dt>
-          <dd>Built by hand in HTML to show the design. In production I would build it in the team's authoring tool, such as Articulate Rise or Storyline, and host it on the LMS.</dd>
-        </dl>
-      </div>
-      <div class="panel reveal">
-        <div class="tag">4 · Assess</div>
-        <h3>How I would measure it</h3>
-        <table>
-          <tr><th>Level</th><th>Measure</th></tr>
-          <tr><td>Reaction</td><td>Completion rate and a one-tap "was this useful?" on the last screen</td></tr>
-          <tr><td>Learning</td><td>First-call accuracy on each round. The round people miss most tells me what to fix next.</td></tr>
-          <tr><td>Behavior</td><td>Spot check: do leads use the checklist before doors open?</td></tr>
-          <tr><td>Results</td><td>Share of first-time volunteers who return within 60 days, compared with the same period before launch</td></tr>
-        </table>
-        <p style="font-size:13px;color:var(--muted);margin:10px 0 0">This is the evaluation plan, not results. The sample has not been piloted yet.</p>
-      </div>
-    </div>
+<section id="proof" aria-label="Experience">
+  <div class="proof">
+    <div><span class="num">400+</span>volunteers led</div>
+    <div><span class="num">100+</span>adults taught and certified</div>
+    <div><span class="num">125+</span>eco-educators trained</div>
   </div>
 </section>
+
+</main>
+
+<footer><div class="wrap">M Coburn · Chicago · <a href="mailto:cultivate.regenerate@gmail.com">cultivate.regenerate@gmail.com</a></div></footer>
 
 <dialog id="aid" aria-labelledby="aidTitle">
   <div class="tag">Job aid</div>
@@ -274,83 +212,6 @@ dialog#aid .btn{margin-top:14px;width:100%}
   <div id="aidList"></div>
   <button class="btn" id="aidClose">Back to the shift</button>
 </dialog>
-
-<section id="cases">
-  <h2>Case studies</h2>
-  <p class="lede">Learning I have designed and delivered, described using the same design process I would follow on any team.</p>
-  <div class="cases">
-
-    <div class="case">
-      <h3>Volunteer onboarding, Green City Market</h3>
-      <div class="meta">Volunteer Manager · 2026 · Chicago</div>
-      <p>I led a volunteer community of 400+ people across a busy market season. I rebuilt onboarding so new volunteers could arrive confident and stay.</p>
-      <div class="steps"><span>Design: training slides + video</span><span>Develop: handbook + field checklists</span><span>Deliver: live orientations</span><span>Evaluate: hours dashboard</span></div>
-      <div class="stats"><div><span class="num">400+</span><br>volunteer community</div><div><span class="num">~60%</span><br>of new volunteers returned</div></div>
-    </div>
-
-    <div class="case">
-      <h3>Permaculture design course, Earth Activist Training</h3>
-      <div class="meta">Teaching Assistant · course designer and teacher · 2020–2022 · remote and in person</div>
-      <p>I designed the course modules, set up the online course spaces myself, and taught adult students through a permaculture design certificate, in person and over Zoom. I was also student teacher for a 30-person Permaculture Design Course.</p>
-      <div class="steps"><span>Course build: Google Classroom, Mighty Networks</span><span>Live and Zoom teaching</span><span>Certification</span></div>
-      <div class="stats"><div><span class="num">100+</span><br>adults taught and certified</div></div>
-    </div>
-
-    <div class="case">
-      <h3>Accredited gap-year program, Eco-Institute at Pickards Mountain</h3>
-      <div class="meta">Support Facilitator · curriculum designer and teacher · 2022 · North Carolina</div>
-      <p>I designed and taught curriculum for a ten-week accredited gap-year program on a 28-acre educational farm, and served on the Rising Earth Immersion leadership team.</p>
-      <div class="stats"><div><span class="num">10</span><br>weeks</div><div><span class="num">14</span><br>participants, ages 18–28</div></div>
-    </div>
-
-    <div class="case">
-      <h3>Lifelong learning programs, Garfield Park Conservatory</h3>
-      <div class="meta">Lifelong Learning Assistant · 2018–2019 · Chicago</div>
-      <p>I curated the adult learning program: booked the speakers for the lecture series, hired the teachers for classes, and set the feel of each event so people wanted to come back. I also managed the volunteers who staffed them.</p>
-      <div class="stats"><div><span class="num">300+</span><br>attendees</div><div><span class="num">50+</span><br>volunteers</div></div>
-    </div>
-
-    <div class="case">
-      <h3>Training eco-educators</h3>
-      <div class="meta">Event Sustainability Supervisor · 2013–2014</div>
-      <p>I recruited and trained a team of eco-educators for event sustainability work.</p>
-      <div class="stats"><div><span class="num">125+</span><br>eco-educators trained</div></div>
-    </div>
-
-    <div class="case">
-      <h3>Food rescue, 2024 Democratic National Convention</h3>
-      <div class="meta">Sustainability operations · 2024 · Chicago</div>
-      <p>I worked on sustainability operations for the convention, including food rescue and waste planning with City staff, and built the post-event waste data. It is where I learned the food recovery side of the work this sample is written for.</p>
-      <p style="font-size:13px;color:var(--muted);margin:0">Event results:</p>
-      <div class="stats"><div><span class="num">27,652</span><br>lbs of food rescued</div><div><span class="num">23,000+</span><br>meals</div><div><span class="num">73%</span><br>diversion at McCormick Place</div></div>
-    </div>
-
-    <div class="case">
-      <h3>More teaching and training</h3>
-      <div class="meta">2011–2022</div>
-      <ul style="margin:0;padding-left:18px;font-size:15px">
-        <li>Ecology Project Director, Lighthouse College Prep (Gary, IN): regenerative ecology curriculum for 100+ high school students, with prairie restoration alongside Indiana DNR</li>
-        <li>Greencorps Chicago: co-led OSHA training for a job-training cohort of about 30</li>
-        <li>Impact NW: staff onboarding</li>
-        <li>REACH, University of Redlands: classroom instructor for youth in juvenile hall</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<section id="tools">
-  <h2>Tools</h2>
-  <p class="lede">What I have built in, and what I am adding now.</p>
-  <div class="pills">
-    <span>Google Classroom</span><span>Mighty Networks</span><span>Salesforce (volunteer tracking)</span><span>Google Workspace</span><span>Slides and video for training</span><span>Zoom and YouTube teaching</span><span>Live facilitation</span>
-    <span class="learn">Articulate Rise (learning now)</span>
-  </div>
-</section>
-
-</main>
-
-<footer><div class="wrap">M Coburn · Learning design portfolio · Chicago</div></footer>
 
 <script>
 (function(){
