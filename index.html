@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="M Coburn, learning designer in Chicago: a mobile microlearning work sample and case studies in adult training, curriculum and volunteer onboarding.">
+<meta name="description" content="M Coburn, learning designer in Chicago: a playable shift simulation for pantry volunteer leads and case studies in adult training, curriculum and volunteer onboarding.">
 <meta property="og:title" content="M Coburn · Learning Design Portfolio">
-<meta property="og:description" content="Mobile microlearning work sample and case studies in adult training, curriculum and volunteer onboarding.">
+<meta property="og:description" content="Play a 3-minute pantry shift: a scenario-based work sample for volunteer leads, plus case studies in adult training, curriculum and volunteer onboarding.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
 <title>M Coburn · Learning Design Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,6 +93,64 @@ th{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;le
 .pills span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:14px}
 .pills span.learn{border-style:dashed;color:var(--muted)}
 footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
+
+/* v2: hero */
+header.hero{position:relative;overflow:hidden;padding-bottom:64px;background:radial-gradient(120% 140% at 85% 0%,#5c8f52 0%,#3f6b3a 55%,#33582f 100%)}
+header.hero .sprouts{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:46px}
+.cta{display:inline-flex;gap:8px;align-items:center;margin-top:20px;background:var(--sun);color:var(--soil);font-weight:600;text-decoration:none;border-radius:999px;padding:12px 22px;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.cta:focus-visible,.btn:focus-visible,.opt:focus-visible,.aid-btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){
+  header.hero .eyebrow,header.hero h1,header.hero p,header.hero .cta,header.hero .contact{animation:rise .7s cubic-bezier(.2,.8,.2,1) backwards}
+  header.hero h1{animation-delay:.08s} header.hero p{animation-delay:.16s} header.hero .cta{animation-delay:.26s} header.hero .contact{animation-delay:.34s}
+  .js-reveal .reveal,.js-reveal .case{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+  .js-reveal .reveal.in,.js-reveal .case.in{opacity:1;transform:none}
+}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* v2: game */
+.screen{overflow:clip}
+.hud{position:sticky;top:46px;z-index:3;border-radius:24px 24px 0 0;display:flex;gap:10px;align-items:center;padding:14px 16px 12px;border-bottom:1px solid var(--line);background:#fff}
+.meter-wrap{flex:1}
+.meter-top{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.04em;margin-bottom:6px}
+.meter-top b{color:var(--soil);display:inline-block;font-variant-numeric:tabular-nums}
+.meter{height:10px;border-radius:999px;background:var(--sprout);overflow:hidden}
+.meter i{display:block;height:100%;width:40%;background:var(--leaf-2);border-radius:999px;transition:width .6s cubic-bezier(.2,.8,.2,1),background .4s}
+.aid-btn{font:inherit;font-size:13px;font-weight:600;border:1.5px solid var(--leaf);color:var(--leaf);background:#fff;border-radius:999px;padding:7px 12px;cursor:pointer}
+.stage{flex:1;padding:18px 18px 10px;overflow:hidden}
+.scene h4{font-family:Fraunces,Georgia,serif;font-size:21px;line-height:1.25;margin:0 0 14px}
+.scene h4:focus{outline:none}
+.scene p{margin:0 0 10px;font-size:15px}
+.obj-line{font-size:12px;color:var(--muted);margin:-4px 0 6px}
+.hint{font-size:13px;color:var(--muted)}
+.face{font-size:42px;line-height:1;margin:4px 0 10px;display:inline-block}
+.opt{display:flex;gap:10px;align-items:flex-start;transition:border-color .2s,background .2s,transform .15s}
+.opt:not([disabled]):active{transform:scale(.98)}
+.opt .key{flex:none;width:22px;height:22px;border-radius:6px;background:var(--sprout);color:#2c4f27;font-size:12px;font-weight:700;display:grid;place-items:center;margin-top:1px}
+.opt.okay{border-color:var(--sun);background:#fbf1dc}
+.opt[disabled]:not(.picked){opacity:.55}
+.fb.mid{background:#fbf1dc;color:#5a4210}
+.out .fb{display:block;margin-top:8px}
+.out .fb p{margin:0 0 6px;font-size:14px}
+.when{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;opacity:.8}
+.why{font-style:italic;opacity:.9}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center;margin:6px 0 4px}
+.row .btn:only-child{margin-left:auto}
+.btn.wide{width:100%;margin-top:8px}
+.recap{list-style:none;padding:0;margin:10px 0 0;font-size:14px}
+.recap li{padding:7px 0 7px 26px;border-bottom:1px solid var(--line);position:relative}
+.recap li::before{position:absolute;left:0;top:7px;font-weight:700}
+.recap li.y::before{content:"✓";color:var(--leaf)}
+.recap li.n::before{content:"↻";color:var(--bad)}
+.dots{display:flex;justify-content:center;gap:8px;padding:10px 0 16px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .3s,transform .3s}
+.dots i.done{background:var(--leaf-2)}
+.dots i.now{background:var(--sun);transform:scale(1.35)}
+dialog#aid{border:0;border-radius:20px;padding:22px;max-width:360px;width:calc(100% - 32px);box-shadow:0 20px 60px rgba(0,0,0,.3);color:var(--soil)}
+dialog#aid::backdrop{background:rgba(47,42,36,.45)}
+dialog#aid h4{font-family:Fraunces,Georgia,serif;font-size:22px;margin:0 0 8px}
+dialog#aid .btn{margin-top:14px;width:100%}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.meter i,.opt,.dots i,.cta{transition:none}}
 </style>
 </head>
 <body>
@@ -102,8 +160,10 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
     <div class="eyebrow">Learning design portfolio</div>
     <h1>M Coburn</h1>
     <p>I design training that people use on a busy shift: short, practical, built around the job in front of them. More than a decade of teaching and training, from high school ecology classrooms and adult permaculture certificate courses to volunteer onboarding at Green City Market.</p>
+    <a class="cta" href="#sample">Play the 3-minute shift <span aria-hidden="true">→</span></a>
     <div class="contact"><span>Chicago</span><a href="mailto:cultivate.regenerate@gmail.com" style="color:#fff">cultivate.regenerate@gmail.com</a></div>
   </div>
+  <svg class="sprouts" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C200 20 400 50 600 30 S1000 10 1200 40 V60Z" fill="#fbf8f2"/></svg>
 </header>
 
 <nav class="jump"><div class="wrap">
@@ -117,24 +177,26 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
 
 <section id="sample">
   <h2>Work sample: Your First 15 Minutes</h2>
-  <p class="lede">A five-minute mobile microlearning for pantry and partner agency volunteer leads. It teaches one thing well: how to welcome a new volunteer so they come back. Tap through it below. It is built from the onboarding approach I used at Green City Market, rewritten for a pantry setting.</p>
+  <p class="lede">A three-minute shift simulation for pantry and partner agency volunteer leads. It teaches one thing well: how to welcome a new volunteer so they come back. You run a Saturday shift in four rounds, and every call you make shows what happens next week. Built from the onboarding approach I used at Green City Market, rewritten for a pantry setting.</p>
 
   <div class="grid two">
     <div>
-      <div class="phone"><div class="screen">
-        <div class="bar"><i id="prog"></i></div>
-        <div class="card" id="card"></div>
-        <div class="foot">
-          <button class="btn ghost" id="back">Back</button>
-          <small id="count"></small>
-          <button class="btn" id="next">Next</button>
+      <div class="phone"><div class="screen" id="game">
+        <div class="hud">
+          <div class="meter-wrap">
+            <div class="meter-top"><span>Come-back meter</span><b id="mval">40%</b></div>
+            <div class="meter" role="progressbar" aria-label="Come-back meter, a game mechanic" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" id="meter"><i id="mfill"></i></div>
+          </div>
+          <button class="aid-btn" id="aidBtn" aria-haspopup="dialog">Job aid</button>
         </div>
+        <div class="stage" id="stage" aria-live="polite"></div>
+        <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       </div></div>
-      <p class="note">Works on a phone with no app or sign-in. Built by hand in HTML to show the design; in production I would build it in the team's authoring tool and LMS.</p>
+      <p class="note">Tap, click, or press 1–4 to choose. The meter is a game mechanic, not data. Built by hand in HTML to show the design; in production I would build it in the team's authoring tool and LMS.</p>
     </div>
 
     <div id="design">
-      <div class="panel">
+      <div class="panel reveal">
         <h3>Design notes</h3>
         <dl>
           <dt>Learners</dt>
@@ -146,22 +208,35 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
             <ol class="obj">
               <li>Greet a new volunteer and give them one clear job and a buddy within five minutes of arrival.</li>
               <li>Split a large walk-in group into small crews led by returning volunteers.</li>
-              <li>Deliver a two-minute safety talk covering lifting, gloves and the first aid kit.</li>
+              <li>Deliver a two-minute safety talk covering lifting, gloves, cold food and the first aid kit.</li>
               <li>Close the shift by asking each new volunteer to sign up for the next one.</li>
             </ol>
           </dd>
           <dt>Approach</dt>
-          <dd>Microlearning (eight cards, about five minutes), two decisions drawn from real shift situations with feedback on every choice, and a checklist job aid the lead can keep open during the shift.</dd>
-          <dt>Why it is built this way</dt>
-          <dd>The checklist does the remembering so the lesson does not have to. The scenarios practice the judgment calls that go wrong in real life, like a corporate group arriving early with no shift lead.</dd>
+          <dd>Four rounds, one per objective, each a real moment on a Saturday shift. About three minutes. The checklist job aid is one tap away the whole time and is the last screen.</dd>
         </dl>
       </div>
-      <div class="panel">
+      <div class="panel reveal">
+        <h3>Design decisions</h3>
+        <dl>
+          <dt>Practice first, no lecture up front</dt>
+          <dd>The lesson opens on the shift, not on slides. People learn the welcome by doing it, and the job aid is there if they want it.</dd>
+          <dt>Show the consequence, skip the red X</dt>
+          <dd>Each choice jumps to next Saturday: does Dana come back? That makes the stakes real without a narrator telling people what to think.</dd>
+          <dt>Mistakes are safe</dt>
+          <dd>After any call you can try the round another way. Your first call is what moves the meter, so the score still means something.</dd>
+          <dt>One score, tied to the goal</dt>
+          <dd>No badges or leaderboard. The only number is the one a volunteer lead cares about: will people come back.</dd>
+          <dt>Motion with a job</dt>
+          <dd>Things move only to show change: the meter fills, the next scene slides in. If your device is set to reduce motion, it fades instead.</dd>
+        </dl>
+      </div>
+      <div class="panel reveal">
         <h3>How I would measure it</h3>
         <table>
           <tr><th>Level</th><th>Measure</th></tr>
-          <tr><td>Reaction</td><td>Completion rate and a one-tap "was this useful?" on the last card</td></tr>
-          <tr><td>Learning</td><td>First-try accuracy on the two decision cards</td></tr>
+          <tr><td>Reaction</td><td>Completion rate and a one-tap "was this useful?" on the last screen</td></tr>
+          <tr><td>Learning</td><td>First-call accuracy on each round. The round people miss most tells me what to fix in the live orientation.</td></tr>
           <tr><td>Behavior</td><td>Spot check: do leads use the checklist before doors open?</td></tr>
           <tr><td>Results</td><td>Share of first-time volunteers who return within 60 days, compared with the same period before launch</td></tr>
         </table>
@@ -170,6 +245,13 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
     </div>
   </div>
 </section>
+
+<dialog id="aid" aria-labelledby="aidTitle">
+  <div class="tag">Job aid</div>
+  <h4 id="aidTitle">Before doors open</h4>
+  <div id="aidList"></div>
+  <button class="btn" id="aidClose">Back to the shift</button>
+</dialog>
 
 <section id="cases">
   <h2>Case studies</h2>
@@ -249,53 +331,119 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
 <footer><div class="wrap">M Coburn · Learning design portfolio · Chicago</div></footer>
 
 <script>
-var cards=[
- {tag:"Start",title:"Your First 15 Minutes",html:"<div class='big'>🥕</div><p>A new volunteer's first fifteen minutes shape whether they come back.</p><p>In five minutes you will learn the welcome that works on a busy shift, and you will practice two real situations.</p>"},
- {tag:"The welcome",title:"Four moves, in this order",html:"<ul><li><b>Greet them by name.</b> Have their name tag ready before they arrive.</li><li><b>Give them one job.</b> One clear task beats a full tour.</li><li><b>Give them a buddy.</b> Pair them with a returning volunteer.</li><li><b>Tell them why it matters.</b> One sentence on who the food reaches today.</li></ul><p>The tour, the history and the paperwork can wait until the first break.</p>"},
- {tag:"Check yourself",title:"Doors open in 5 minutes and a new volunteer walks in. You are slammed. First move?",q:[
-   ["Hand them the sign-in sheet and point to the line.",0,"They are now alone in a line. That is the moment people decide not to come back."],
-   ["Greet them by name, give them one job and pair them with a returning volunteer.",1,"Right. Thirty seconds from you, and their buddy does the rest."],
-   ["Ask them to wait by the door until things calm down.",0,"Waiting with nothing to do is the most common reason first-timers do not return."],
-   ["Walk them through the whole space first.",0,"A full tour costs you ten minutes you do not have. Save it for the break."]]},
- {tag:"Safety in two minutes",title:"Say it before the first box moves",html:"<ul><li><b>Lift with your legs,</b> and ask for help with anything heavy.</li><li><b>Wash hands</b> and wear gloves for any open or unpackaged food.</li><li><b>Keep cold food cold.</b> It goes back in the cooler as soon as it is sorted.</li><li><b>Point to the first aid kit</b> and tell them who to find if something goes wrong.</li></ul><p>Follow your food bank's own food safety rules wherever they are stricter.</p>"},
- {tag:"Real situation",title:"A corporate group of 12 shows up 20 minutes early. Your shift lead is out sick.",q:[
-   ["Ask them to wait outside until the shift starts.",0,"Twelve people waiting outside become twelve people checking their phones and an awkward start."],
-   ["Split them into three crews of four, each led by a returning volunteer.",1,"Best call. Small crews with a lead learn faster, and your regulars get to lead."],
-   ["Put all twelve on the same task so you can watch them.",0,"One big group crowds the station and half of them stand around."]]},
- {tag:"Your job aid",title:"Before doors open",check:["Name tags ready for every new volunteer","One job per person, written where everyone can see it","Buddy pairs set with returning volunteers","Two-minute safety talk: lifting, gloves, cold food, first aid kit","At the end: thank them and ask them to sign up for the next shift"]},
- {tag:"Close the loop",title:"The last two minutes matter too",html:"<p>Before a new volunteer leaves, thank them for one specific thing they did, then ask them to pick their next shift while they are still standing there.</p><p>A date on the calendar beats \"check the website.\"</p>"},
- {tag:"Done",title:"You finished.",html:"<div class='big'>🌱</div><p>Keep the checklist open on your phone during your next shift.</p><p style='margin-top:14px'><b>Was this useful?</b></p><div id='rate'><button class='opt' data-r='1'>Yes, I will use it this week</button><button class='opt' data-r='0'>Not quite. Something was missing</button></div><div class='fb good' id='thanks'>Thanks. Your answer helps make the next version better.</div>"}
+(function(){
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var START=40;
+var CHECK=["Name tags ready for every new volunteer","One job per person, written where everyone can see it","Buddy pairs set with returning volunteers","Two-minute safety talk: lifting, gloves, cold food, first aid kit","At the end: thank them for one thing and ask them to pick their next shift"];
+var rounds=[
+ {obj:"Objective 1 · The welcome",time:"8:55 AM",face:"🙂",title:"Doors open in five minutes. Dana, a first-time volunteer, walks in. You are slammed.",
+  q:[["Hand Dana the sign-in sheet and point to the line.",-10,"Dana signs in, then stands by the wall for twenty minutes. <b>Next Saturday, her spot on the schedule is empty.</b>","😶"],
+     ["Greet Dana by name, give her one job (bagging produce) and pair her with Luis, a regular.",15,"Thirty seconds from you. Luis shows her the bins. <b>Next Saturday, Dana is back, and she brought her roommate.</b>","😄"],
+     ["Ask Dana to wait by the door until things calm down.",-10,"Things never calm down. <b>Dana slips out at 10:15 and doesn't sign up again.</b>","😕"],
+     ["Give Dana the full tour first so she knows the space.",5,"Dana knows where everything is. You lost ten minutes before doors and the line backed up. <b>She comes back, but the shift started rough.</b>","🙂"]],
+  why:"One name, one job, one buddy. The tour can wait for the first break."},
+ {obj:"Objective 2 · Big groups",time:"8:58 AM",face:"😮",title:"A corporate group of 12 shows up 20 minutes early. Your shift lead is out sick.",
+  q:[["Ask them to wait outside until the shift starts.",-10,"Twelve people on their phones outside. <b>The group's recap to their team: \"a lot of waiting.\" They book somewhere else next quarter.</b>","😒"],
+     ["Split them into three crews of four, each led by a returning volunteer.",15,"Your regulars light up when you ask them to lead. Three crews are working by 9:05. <b>Two people from the group ask how to sign up on their own.</b>","😄"],
+     ["Put all twelve on the same task so you can watch them.",-5,"Half of them crowd the sorting table and half stand around. <b>Polite thank-yous, no sign-ups.</b>","😐"]],
+  why:"Small crews with a lead learn faster, and your regulars get to lead."},
+ {obj:"Objective 3 · Safety in two minutes",time:"9:04 AM",face:"😬",title:"A new volunteer bends at the waist to grab a heavy case of canned goods. Nobody has said a word about safety yet.",
+  q:[["Pause the room for a two-minute safety talk: lifting, gloves, cold food, first aid kit.",15,"Two minutes, then everyone knows where the first aid kit is. <b>By noon: no sore backs, and the cooler stays cold.</b>","😌"],
+     ["Call out \"lift with your legs!\" and keep moving.",5,"He fixes that one lift. Nobody hears about gloves or the cooler. <b>A crate of milk sits out on the table most of the morning.</b>","😐"],
+     ["Let it go. They're adults.",-10,"<b>A strained back by 10:30.</b> He sits out the rest of the shift and doesn't sign up again.","🤕"]],
+  why:"Say it before the first box moves, and follow your food bank's rules wherever they are stricter."},
+ {obj:"Objective 4 · Close the loop",time:"12:00 PM",face:"🙂",title:"The shift is over. Dana is putting on her coat.",
+  q:[["\"Thanks so much! Check the website for more shifts.\"",-5,"Dana means to. The sign-up takes three clicks and a password. <b>Life gets busy.</b>","😶"],
+     ["Thank her for one specific thing she did, then ask her to pick her next shift right now.",15,"\"You kept the produce line moving.\" <b>She picks a date on your clipboard before she reaches the door.</b>","😄"],
+     ["Email her a thank-you next week.",0,"A nice note lands in a crowded inbox five days later. <b>Maybe.</b>","🙂"]],
+  why:"A date on the calendar beats \"check the website.\""}
 ];
-var i=0,answered={};
-var card=document.getElementById('card'),prog=document.getElementById('prog'),count=document.getElementById('count'),back=document.getElementById('back'),next=document.getElementById('next');
+var stage=document.getElementById('stage'),mfill=document.getElementById('mfill'),mval=document.getElementById('mval'),meter=document.getElementById('meter'),dots=document.querySelectorAll('#dots i');
+var r=-1,score=START,first={},shown=START;
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
-function render(){
-  var c=cards[i],h="<div class='tag'>"+c.tag+"</div><h4>"+c.title+"</h4>";
-  if(c.html)h+=c.html;
-  if(c.q){c.q.forEach(function(o,k){h+="<button class='opt' data-k='"+k+"'>"+esc(o[0])+"</button>"});h+="<div class='fb' id='fb'></div>"}
-  if(c.check){c.check.forEach(function(t,k){h+="<label class='check'><input type='checkbox'><span>"+esc(t)+"</span></label>"})}
-  card.innerHTML=h;
-  prog.style.width=((i+1)/cards.length*100)+"%";
-  count.textContent=(i+1)+" / "+cards.length;
-  back.disabled=i===0;
-  next.textContent=i===cards.length-1?"Restart":"Next";
-  next.disabled=!!c.q&&!answered[i];
-  if(c.q){
-    card.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){
-      var k=+b.dataset.k,o=c.q[k],fb=document.getElementById('fb');
-      card.querySelectorAll('.opt').forEach(function(x){x.classList.remove('right','wrong')});
-      b.classList.add(o[1]?'right':'wrong');
-      fb.className='fb show '+(o[1]?'good':'meh');
-      fb.textContent=o[2]+(o[1]?'':' Try another answer.');
-      if(o[1]){answered[i]=true;next.disabled=false;card.querySelectorAll('.opt').forEach(function(x){x.disabled=true})}
-    }});
-  }
-  var rate=document.getElementById('rate');
-  if(rate){rate.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){rate.querySelectorAll('.opt').forEach(function(x){x.disabled=true;x.classList.remove('right')});b.classList.add('right');document.getElementById('thanks').classList.add('show')}})}
+function enter(el){
+  if(!el.animate)return;
+  if(reduce){el.animate([{opacity:0},{opacity:1}],{duration:200,easing:'ease-out'});return}
+  el.animate([{opacity:0,transform:'translateX(28px)'},{opacity:1,transform:'none'}],{duration:380,easing:'cubic-bezier(.2,.8,.2,1)'});
+  var kids=el.querySelectorAll('.opt');
+  kids.forEach(function(k,n){k.animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:320,delay:120+n*60,easing:'ease-out',fill:'backwards'})});
 }
-next.onclick=function(){if(i===cards.length-1){i=0;answered={}}else i++;render()};
-back.onclick=function(){if(i>0){i--;render()}};
-render();
+function setMeter(v){
+  v=Math.max(0,Math.min(100,v));
+  meter.setAttribute('aria-valuenow',v);
+  mfill.style.width=v+'%';
+  mfill.style.background=v>=85?'var(--leaf)':v>=55?'var(--leaf-2)':'var(--sun)';
+  var from=shown;shown=v;
+  if(reduce||from===v){mval.textContent=v+'%';return}
+  var t0=performance.now();
+  (function tick(t){var p=Math.min(1,(t-t0)/600);mval.textContent=Math.round(from+(v-from)*(1-Math.pow(1-p,3)))+'%';if(p<1)requestAnimationFrame(tick)})(t0);
+  if(!reduce&&mval.animate)mval.animate([{transform:'scale(1)'},{transform:'scale(1.25)'},{transform:'scale(1)'}],{duration:450});
+}
+function setDots(){dots.forEach(function(d,n){d.className=n<r?'done':n===r?'now':''})}
+function focusStage(){var h=stage.querySelector('h4');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}}
+function intro(){
+  r=-1;score=START;first={};setMeter(START);setDots();
+  stage.innerHTML="<div class='scene'><div class='tag'>Saturday · 8:50 AM</div><h4>You're the volunteer lead today.</h4><p>Doors open at 9. Four things will happen on this shift. Each call you make shows up next Saturday: do your new volunteers come back?</p><p class='hint'>Your first call in each round moves the come-back meter. You can try any round another way after.</p><button class='btn wide' id='go'>Start the shift</button></div>";
+  enter(stage.firstChild);
+  document.getElementById('go').onclick=function(){next()};
+}
+function next(){r++;setDots();if(r>=rounds.length){end();return}play()}
+function play(){
+  var R=rounds[r],h="<div class='scene'><div class='tag'>Round "+(r+1)+" of 4 · "+R.time+"</div><div class='obj-line'>"+R.obj+"</div><div class='face' aria-hidden='true'>"+R.face+"</div><h4>"+esc(R.title)+"</h4>";
+  R.q.forEach(function(o,k){h+="<button class='opt' data-k='"+k+"'><span class='key'>"+(k+1)+"</span><span>"+esc(o[0])+"</span></button>"});
+  h+="<div class='out' id='out'></div></div>";
+  stage.innerHTML=h;enter(stage.firstChild);focusStage();
+  stage.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){choose(+b.dataset.k)}});
+}
+function choose(k){
+  var R=rounds[r],o=R.q[k],best=Math.max.apply(null,R.q.map(function(x){return x[1]}));
+  var opts=stage.querySelectorAll('.opt');
+  opts.forEach(function(x,n){x.disabled=true;x.classList.toggle('picked',n===k)});
+  opts[k].classList.add(o[1]===best?'right':o[1]>0?'okay':'wrong');
+  var counted=!(r in first);
+  if(counted){first[r]=k;score+=o[1];setMeter(score)}
+  var face=stage.querySelector('.face');face.textContent=o[3];
+  if(!reduce&&face.animate)face.animate([{transform:'scale(.6) rotate(-8deg)'},{transform:'scale(1.15)'},{transform:'scale(1)'}],{duration:500,easing:'ease-out'});
+  var out=document.getElementById('out');
+  out.innerHTML="<div class='fb "+(o[1]===best?'good':o[1]>0?'mid':'meh')+"'><div class='when'>Next Saturday</div><p>"+o[2]+"</p>"+(o[1]===best?"<p class='why'>"+esc(R.why)+"</p>":"")+(counted?"":"<p class='why'>Replay: the meter keeps your first call.</p>")+"</div><div class='row'>"+(o[1]===best?"":"<button class='btn ghost' id='again'>Try it another way</button>")+"<button class='btn' id='nx'>"+(r===rounds.length-1?"See how the shift went":"Next round")+"</button></div>";
+  if(out.animate)out.animate(reduce?[{opacity:0},{opacity:1}]:[{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'none'}],{duration:350,easing:'ease-out'});
+  document.getElementById('nx').onclick=next;
+  var ag=document.getElementById('again');
+  if(ag)ag.onclick=function(){play()};
+  document.getElementById('nx').focus({preventScroll:true});
+}
+function end(){
+  var v=Math.max(0,Math.min(100,score)),tier=v>=85?["🌱","Your crew is coming back.","Every new volunteer left with a job they did, a person they knew, and a date on the calendar."]:v>=55?["🌿","A solid shift, with a few leaks.","Some new volunteers will come back. Replay the rounds where the meter dipped."]:["🍂","A rough Saturday.","The work got done, but first-timers felt like extras. Try the shift again with the job aid open."];
+  var recap="";rounds.forEach(function(R,n){var o=R.q[first[n]],best=Math.max.apply(null,R.q.map(function(x){return x[1]}));recap+="<li class='"+(o[1]===best?'y':'n')+"'><b>"+R.obj.split(' · ')[1]+":</b> "+esc(R.why)+"</li>"});
+  var h="<div class='scene'><div class='tag'>End of shift</div><div class='face' aria-hidden='true'>"+tier[0]+"</div><h4>"+tier[1]+"</h4><p>"+tier[2]+"</p><ul class='recap'>"+recap+"</ul><div class='tag' style='margin-top:14px'>Keep this open on your next shift</div>";
+  CHECK.forEach(function(t){h+="<label class='check'><input type='checkbox'><span>"+esc(t)+"</span></label>"});
+  h+="<p style='margin:14px 0 6px'><b>Was this useful?</b></p><div id='rate'><button class='opt' data-r='1'>Yes, I will use it this week</button><button class='opt' data-r='0'>Not quite. Something was missing</button></div><div class='fb good' id='thanks'>Thanks. Your answer helps make the next version better.</div><button class='btn ghost wide' id='replay'>Play the shift again</button></div>";
+  stage.innerHTML=h;enter(stage.firstChild);focusStage();
+  stage.querySelectorAll('#rate .opt').forEach(function(b){b.onclick=function(){stage.querySelectorAll('#rate .opt').forEach(function(x){x.disabled=true});b.classList.add('right');document.getElementById('thanks').classList.add('show')}});
+  document.getElementById('replay').onclick=intro;
+}
+// job aid dialog
+var aid=document.getElementById('aid'),aidList=document.getElementById('aidList');
+aidList.innerHTML=CHECK.map(function(t){return "<label class='check'><input type='checkbox'><span>"+esc(t)+"</span></label>"}).join('');
+document.getElementById('aidBtn').onclick=function(){if(aid.showModal)aid.showModal();else aid.setAttribute('open','')};
+document.getElementById('aidClose').onclick=function(){if(aid.close)aid.close();else aid.removeAttribute('open')};
+// number keys pick options when the game is in view
+document.addEventListener('keydown',function(e){
+  if(e.target.closest&&e.target.closest('input,textarea,dialog'))return;
+  var n=parseInt(e.key,10);if(!n||r<0||r>=rounds.length)return;
+  var b=stage.querySelectorAll('.opt')[n-1];
+  var g=document.getElementById('game').getBoundingClientRect();
+  if(b&&!b.disabled&&g.bottom>0&&g.top<window.innerHeight){e.preventDefault();b.click()}
+});
+// gentle scroll reveal
+var rev=document.querySelectorAll('.reveal,.case');
+if('IntersectionObserver' in window){
+  document.documentElement.classList.add('js-reveal');
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+  rev.forEach(function(el){io.observe(el)});
+}
+intro();
+})();
 </script>
 </body>
 </html>
