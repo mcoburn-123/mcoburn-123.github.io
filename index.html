@@ -108,6 +108,10 @@ header.hero .sprouts{position:absolute;left:0;right:0;bottom:-1px;width:100%;hei
 }
 @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
+.phases{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.phases span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--sprout);color:#2c4f27;border-radius:999px;padding:5px 12px}
+.panel .tag{margin-bottom:4px}
+
 /* v2: game */
 .screen{overflow:clip}
 .hud{position:sticky;top:46px;z-index:3;border-radius:24px 24px 0 0;display:flex;gap:10px;align-items:center;padding:14px 16px 12px;border-bottom:1px solid var(--line);background:#fff}
@@ -192,17 +196,21 @@ dialog#aid .btn{margin-top:14px;width:100%}
         <div class="stage" id="stage" aria-live="polite"></div>
         <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       </div></div>
-      <p class="note">Tap, click, or press 1–4 to choose. The meter is a game mechanic, not data. Built by hand in HTML to show the design; in production I would build it in the team's authoring tool and LMS.</p>
+      <p class="note">Tap, click, or press 1–4 to choose. The meter is a game mechanic, not data.</p>
     </div>
 
     <div id="design">
+      <p class="phases" aria-label="Design process"><span>Define</span><span>Design</span><span>Deliver</span><span>Assess</span></p>
       <div class="panel reveal">
-        <h3>Design notes</h3>
+        <div class="tag">1 · Define</div>
+        <h3>Who it's for and what has to change</h3>
         <dl>
           <dt>Learners</dt>
           <dd>Volunteer leads at pantries and partner agencies. Many are volunteers themselves. They learn between tasks, mostly on a phone, and have no time for a long module.</dd>
           <dt>The problem</dt>
           <dd>New volunteers who spend their first shift standing around are less likely to come back. The fix is not more information. It is a better first fifteen minutes.</dd>
+          <dt>Where the content comes from</dt>
+          <dd>The volunteer onboarding I ran at Green City Market, rewritten for a pantry. In production, I would sit with a few volunteer leads and food bank staff first, ask why the right move doesn't happen on a busy Saturday, and have them write the scenes from their own shifts.</dd>
           <dt>Learning objectives</dt>
           <dd>After this lesson, a volunteer lead can:
             <ol class="obj">
@@ -212,31 +220,45 @@ dialog#aid .btn{margin-top:14px;width:100%}
               <li>Close the shift by asking each new volunteer to sign up for the next one.</li>
             </ol>
           </dd>
-          <dt>Approach</dt>
-          <dd>Four rounds, one per objective, each a real moment on a Saturday shift. About three minutes. The checklist job aid is one tap away the whole time and is the last screen.</dd>
         </dl>
       </div>
       <div class="panel reveal">
+        <div class="tag">2 · Design</div>
         <h3>Design decisions</h3>
         <dl>
+          <dt>Four rounds, one per objective</dt>
+          <dd>Each round is a real moment on a Saturday shift. About three minutes total. The checklist job aid is one tap away the whole time and is the last screen.</dd>
           <dt>Practice first, no lecture up front</dt>
-          <dd>The lesson opens on the shift, not on slides. People learn the welcome by doing it, and the job aid is there if they want it.</dd>
+          <dd>The lesson opens on the shift, not on slides. People learn the welcome by doing it.</dd>
           <dt>Show the consequence, skip the red X</dt>
           <dd>Each choice jumps to next Saturday: does Dana come back? That makes the stakes real without a narrator telling people what to think.</dd>
           <dt>Mistakes are safe</dt>
           <dd>After any call you can try the round another way. Your first call is what moves the meter, so the score still means something.</dd>
           <dt>One score, tied to the goal</dt>
           <dd>No badges or leaderboard. The only number is the one a volunteer lead cares about: will people come back.</dd>
-          <dt>Motion with a job</dt>
-          <dd>Things move only to show change: the meter fills, the next scene slides in. If your device is set to reduce motion, it fades instead.</dd>
+          <dt>Built for every learner</dt>
+          <dd>Plain words and short screens. Works by touch, mouse or keyboard (keys 1 to 4). Motion only shows change, and it fades for anyone whose device is set to reduce motion. The job aid gives a second way in for people who would rather read than play. A Spanish version would be the first addition.</dd>
         </dl>
       </div>
       <div class="panel reveal">
+        <div class="tag">3 · Deliver</div>
+        <h3>How it would reach leads</h3>
+        <dl>
+          <dt>Where they already are</dt>
+          <dd>A QR code on the sign-in table and the link in the shift reminder text. No app, no login.</dd>
+          <dt>Live follow-up</dt>
+          <dd>A short live virtual huddle for leads a few weeks after launch to swap their own Saturday stories. The best ones become new rounds, so the lesson keeps growing with the network.</dd>
+          <dt>Authoring tools</dt>
+          <dd>Built by hand in HTML to show the design. In production I would build it in the team's authoring tool, such as Articulate Rise or Storyline, and host it on the LMS.</dd>
+        </dl>
+      </div>
+      <div class="panel reveal">
+        <div class="tag">4 · Assess</div>
         <h3>How I would measure it</h3>
         <table>
           <tr><th>Level</th><th>Measure</th></tr>
           <tr><td>Reaction</td><td>Completion rate and a one-tap "was this useful?" on the last screen</td></tr>
-          <tr><td>Learning</td><td>First-call accuracy on each round. The round people miss most tells me what to fix in the live orientation.</td></tr>
+          <tr><td>Learning</td><td>First-call accuracy on each round. The round people miss most tells me what to fix next.</td></tr>
           <tr><td>Behavior</td><td>Spot check: do leads use the checklist before doors open?</td></tr>
           <tr><td>Results</td><td>Share of first-time volunteers who return within 60 days, compared with the same period before launch</td></tr>
         </table>
