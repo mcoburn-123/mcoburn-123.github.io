@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="M Coburn, learning designer in Chicago: a mobile microlearning work sample and case studies in adult training, curriculum and volunteer onboarding.">
+<meta property="og:title" content="M Coburn · Learning Design Portfolio">
+<meta property="og:description" content="Mobile microlearning work sample and case studies in adult training, curriculum and volunteer onboarding.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<title>M Coburn · Learning Design Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --soil:#2f2a24; --leaf:#3f6b3a; --leaf-2:#5c8f52; --sprout:#e8f0e1; --sun:#e9a93b;
+  --paper:#fbf8f2; --line:#e3ddd2; --muted:#6d655b; --bad:#a8432e; --bad-bg:#f8e9e4;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--soil);font:16px/1.55 Inter,system-ui,sans-serif}
+a{color:var(--leaf)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.hero{background:var(--leaf);color:#fff;padding:48px 0 40px}
+header.hero h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(30px,6vw,46px);line-height:1.1;margin:0 0 10px}
+header.hero p{margin:0;max-width:640px;font-size:18px;opacity:.95}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.85;margin-bottom:10px}
+.contact{margin-top:18px;font-size:14px;opacity:.9}
+.contact span{display:inline-block;margin-right:16px}
+nav.jump{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);z-index:5}
+nav.jump .wrap{display:flex;gap:18px;overflow-x:auto;padding-top:12px;padding-bottom:12px;font-size:14px;font-weight:500;white-space:nowrap}
+nav.jump a{text-decoration:none;color:var(--soil)}
+section{padding:44px 0 8px}
+h2{font-family:Fraunces,Georgia,serif;font-size:28px;margin:0 0 6px}
+h3{font-size:18px;margin:0 0 6px}
+.lede{color:var(--muted);margin:0 0 22px;max-width:680px}
+.grid{display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:860px){.grid.two{grid-template-columns:380px 1fr}}
+
+/* phone frame */
+.phone{background:#1f1c18;border-radius:34px;padding:12px;max-width:380px;margin:0 auto;box-shadow:0 14px 40px rgba(47,42,36,.25)}
+.screen{background:#fff;border-radius:24px;overflow:hidden;min-height:620px;display:flex;flex-direction:column}
+.bar{height:6px;background:var(--sprout)}
+.bar i{display:block;height:100%;width:0;background:var(--leaf-2);transition:width .3s}
+.card{flex:1;padding:22px 20px 14px;display:flex;flex-direction:column}
+.tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--leaf-2);margin-bottom:8px}
+.card h4{font-family:Fraunces,Georgia,serif;font-size:23px;line-height:1.2;margin:0 0 12px}
+.card p{margin:0 0 10px;font-size:15px}
+.card ul{padding-left:18px;margin:4px 0 10px;font-size:15px}
+.card li{margin-bottom:6px}
+.opt{display:block;width:100%;text-align:left;font:inherit;font-size:15px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 9px;cursor:pointer;color:var(--soil)}
+.opt:hover{border-color:var(--leaf-2)}
+.opt.right{border-color:var(--leaf);background:var(--sprout)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt[disabled]{cursor:default}
+.fb{border-radius:12px;padding:11px 13px;font-size:14px;margin:4px 0 8px;display:none}
+.fb.show{display:block}
+.fb.good{background:var(--sprout);color:#24451f}
+.fb.meh{background:var(--bad-bg);color:#6b2a1c}
+.check{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--leaf);margin-top:1px;flex:none}
+.big{font-size:40px;line-height:1;margin-bottom:10px}
+.foot{display:flex;justify-content:space-between;align-items:center;padding:12px 16px 16px;border-top:1px solid var(--line)}
+.foot small{color:var(--muted)}
+.btn{font:inherit;font-weight:600;font-size:15px;border:0;border-radius:999px;padding:11px 20px;cursor:pointer;background:var(--leaf);color:#fff}
+.btn.ghost{background:transparent;color:var(--leaf);padding-left:4px;padding-right:4px}
+.btn[disabled]{opacity:.35;cursor:default}
+.note{font-size:13px;color:var(--muted);text-align:center;margin:12px auto 0;max-width:380px}
+
+/* design doc */
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.panel+.panel{margin-top:16px}
+dl{margin:0}
+dt{font-weight:600;margin-top:14px}
+dt:first-child{margin-top:0}
+dd{margin:2px 0 0;color:#4a433b}
+ol.obj{margin:6px 0 0;padding-left:20px}
+ol.obj li{margin-bottom:5px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+
+/* case studies */
+.cases{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.cases{grid-template-columns:1fr 1fr}}
+.case{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.case .meta{font-size:13px;color:var(--muted);margin-bottom:10px}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.steps span{font-size:12px;font-weight:600;background:var(--sprout);color:#2c4f27;border-radius:999px;padding:4px 10px}
+.num{font-family:Fraunces,Georgia,serif;font-size:24px;color:var(--leaf);font-weight:700}
+.stats{display:flex;gap:20px;flex-wrap:wrap;margin-top:8px}
+.stats div{font-size:13px;color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:14px}
+.pills span.learn{border-style:dashed;color:var(--muted)}
+footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Learning design portfolio</div>
+    <h1>M Coburn</h1>
+    <p>I design training that people use on a busy shift: short, practical, built around the job in front of them. More than a decade of teaching and training, from high school ecology classrooms and adult permaculture certificate courses to volunteer onboarding at Green City Market.</p>
+    <div class="contact"><span>Chicago</span><a href="mailto:cultivate.regenerate@gmail.com" style="color:#fff">cultivate.regenerate@gmail.com</a></div>
+  </div>
+</header>
+
+<nav class="jump"><div class="wrap">
+  <a href="#sample">Work sample</a>
+  <a href="#design">Design notes</a>
+  <a href="#cases">Case studies</a>
+  <a href="#tools">Tools</a>
+</div></nav>
+
+<main class="wrap">
+
+<section id="sample">
+  <h2>Work sample: Your First 15 Minutes</h2>
+  <p class="lede">A five-minute mobile microlearning for pantry and partner agency volunteer leads. It teaches one thing well: how to welcome a new volunteer so they come back. Tap through it below. It is built from the onboarding approach I used at Green City Market, rewritten for a pantry setting.</p>
+
+  <div class="grid two">
+    <div>
+      <div class="phone"><div class="screen">
+        <div class="bar"><i id="prog"></i></div>
+        <div class="card" id="card"></div>
+        <div class="foot">
+          <button class="btn ghost" id="back">Back</button>
+          <small id="count"></small>
+          <button class="btn" id="next">Next</button>
+        </div>
+      </div></div>
+      <p class="note">Works on a phone with no app or sign-in. Built by hand in HTML to show the design; in production I would build it in the team's authoring tool and LMS.</p>
+    </div>
+
+    <div id="design">
+      <div class="panel">
+        <h3>Design notes</h3>
+        <dl>
+          <dt>Learners</dt>
+          <dd>Volunteer leads at pantries and partner agencies. Many are volunteers themselves. They learn between tasks, mostly on a phone, and have no time for a long module.</dd>
+          <dt>The problem</dt>
+          <dd>New volunteers who spend their first shift standing around are less likely to come back. The fix is not more information. It is a better first fifteen minutes.</dd>
+          <dt>Learning objectives</dt>
+          <dd>After this lesson, a volunteer lead can:
+            <ol class="obj">
+              <li>Greet a new volunteer and give them one clear job and a buddy within five minutes of arrival.</li>
+              <li>Split a large walk-in group into small crews led by returning volunteers.</li>
+              <li>Deliver a two-minute safety talk covering lifting, gloves and the first aid kit.</li>
+              <li>Close the shift by asking each new volunteer to sign up for the next one.</li>
+            </ol>
+          </dd>
+          <dt>Approach</dt>
+          <dd>Microlearning (eight cards, about five minutes), two decisions drawn from real shift situations with feedback on every choice, and a checklist job aid the lead can keep open during the shift.</dd>
+          <dt>Why it is built this way</dt>
+          <dd>The checklist does the remembering so the lesson does not have to. The scenarios practice the judgment calls that go wrong in real life, like a corporate group arriving early with no shift lead.</dd>
+        </dl>
+      </div>
+      <div class="panel">
+        <h3>How I would measure it</h3>
+        <table>
+          <tr><th>Level</th><th>Measure</th></tr>
+          <tr><td>Reaction</td><td>Completion rate and a one-tap "was this useful?" on the last card</td></tr>
+          <tr><td>Learning</td><td>First-try accuracy on the two decision cards</td></tr>
+          <tr><td>Behavior</td><td>Spot check: do leads use the checklist before doors open?</td></tr>
+          <tr><td>Results</td><td>Share of first-time volunteers who return within 60 days, compared with the same period before launch</td></tr>
+        </table>
+        <p style="font-size:13px;color:var(--muted);margin:10px 0 0">This is the evaluation plan, not results. The sample has not been piloted yet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <h2>Case studies</h2>
+  <p class="lede">Learning I have designed and delivered, described using the same design process I would follow on any team.</p>
+  <div class="cases">
+
+    <div class="case">
+      <h3>Volunteer onboarding, Green City Market</h3>
+      <div class="meta">Volunteer Manager · 2026 · Chicago</div>
+      <p>I led a volunteer community of 400+ people across a busy market season. I rebuilt onboarding so new volunteers could arrive confident and stay.</p>
+      <div class="steps"><span>Design: training slides + video</span><span>Develop: handbook + field checklists</span><span>Deliver: live orientations</span><span>Evaluate: hours dashboard</span></div>
+      <div class="stats"><div><span class="num">400+</span><br>volunteer community</div><div><span class="num">~60%</span><br>of new volunteers returned</div></div>
+    </div>
+
+    <div class="case">
+      <h3>Permaculture design course, Earth Activist Training</h3>
+      <div class="meta">Teaching Assistant · course designer and teacher · 2020–2022 · remote and in person</div>
+      <p>I designed the course modules, set up the online course spaces myself, and taught adult students through a permaculture design certificate, in person and over Zoom. I was also student teacher for a 30-person Permaculture Design Course.</p>
+      <div class="steps"><span>Course build: Google Classroom, Mighty Networks</span><span>Live and Zoom teaching</span><span>Certification</span></div>
+      <div class="stats"><div><span class="num">100+</span><br>adults taught and certified</div></div>
+    </div>
+
+    <div class="case">
+      <h3>Accredited gap-year program, Eco-Institute at Pickards Mountain</h3>
+      <div class="meta">Support Facilitator · curriculum designer and teacher · 2022 · North Carolina</div>
+      <p>I designed and taught curriculum for a ten-week accredited gap-year program on a 28-acre educational farm, and served on the Rising Earth Immersion leadership team.</p>
+      <div class="stats"><div><span class="num">10</span><br>weeks</div><div><span class="num">14</span><br>participants, ages 18–28</div></div>
+    </div>
+
+    <div class="case">
+      <h3>Lifelong learning programs, Garfield Park Conservatory</h3>
+      <div class="meta">Lifelong Learning Assistant · 2018–2019 · Chicago</div>
+      <p>I curated the adult learning program: booked the speakers for the lecture series, hired the teachers for classes, and set the feel of each event so people wanted to come back. I also managed the volunteers who staffed them.</p>
+      <div class="stats"><div><span class="num">300+</span><br>attendees</div><div><span class="num">50+</span><br>volunteers</div></div>
+    </div>
+
+    <div class="case">
+      <h3>Training eco-educators</h3>
+      <div class="meta">Event Sustainability Supervisor · 2013–2014</div>
+      <p>I recruited and trained a team of eco-educators for event sustainability work.</p>
+      <div class="stats"><div><span class="num">125+</span><br>eco-educators trained</div></div>
+    </div>
+
+    <div class="case">
+      <h3>Food rescue, 2024 Democratic National Convention</h3>
+      <div class="meta">Sustainability operations · 2024 · Chicago</div>
+      <p>I worked on sustainability operations for the convention, including food rescue and waste planning with City staff, and built the post-event waste data. It is where I learned the food recovery side of the work this sample is written for.</p>
+      <p style="font-size:13px;color:var(--muted);margin:0">Event results:</p>
+      <div class="stats"><div><span class="num">27,652</span><br>lbs of food rescued</div><div><span class="num">23,000+</span><br>meals</div><div><span class="num">73%</span><br>diversion at McCormick Place</div></div>
+    </div>
+
+    <div class="case">
+      <h3>More teaching and training</h3>
+      <div class="meta">2011–2022</div>
+      <ul style="margin:0;padding-left:18px;font-size:15px">
+        <li>Ecology Project Director, Lighthouse College Prep (Gary, IN): regenerative ecology curriculum for 100+ high school students, with prairie restoration alongside Indiana DNR</li>
+        <li>Greencorps Chicago: co-led OSHA training for a job-training cohort of about 30</li>
+        <li>Impact NW: staff onboarding</li>
+        <li>REACH, University of Redlands: classroom instructor for youth in juvenile hall</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="tools">
+  <h2>Tools</h2>
+  <p class="lede">What I have built in, and what I am adding now.</p>
+  <div class="pills">
+    <span>Google Classroom</span><span>Mighty Networks</span><span>Salesforce (volunteer tracking)</span><span>Google Workspace</span><span>Slides and video for training</span><span>Zoom and YouTube teaching</span><span>Live facilitation</span>
+    <span class="learn">Articulate Rise (learning now)</span>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">M Coburn · Learning design portfolio · Chicago</div></footer>
+
+<script>
+var cards=[
+ {tag:"Start",title:"Your First 15 Minutes",html:"<div class='big'>🥕</div><p>A new volunteer's first fifteen minutes shape whether they come back.</p><p>In five minutes you will learn the welcome that works on a busy shift, and you will practice two real situations.</p>"},
+ {tag:"The welcome",title:"Four moves, in this order",html:"<ul><li><b>Greet them by name.</b> Have their name tag ready before they arrive.</li><li><b>Give them one job.</b> One clear task beats a full tour.</li><li><b>Give them a buddy.</b> Pair them with a returning volunteer.</li><li><b>Tell them why it matters.</b> One sentence on who the food reaches today.</li></ul><p>The tour, the history and the paperwork can wait until the first break.</p>"},
+ {tag:"Check yourself",title:"Doors open in 5 minutes and a new volunteer walks in. You are slammed. First move?",q:[
+   ["Hand them the sign-in sheet and point to the line.",0,"They are now alone in a line. That is the moment people decide not to come back."],
+   ["Greet them by name, give them one job and pair them with a returning volunteer.",1,"Right. Thirty seconds from you, and their buddy does the rest."],
+   ["Ask them to wait by the door until things calm down.",0,"Waiting with nothing to do is the most common reason first-timers do not return."],
+   ["Walk them through the whole space first.",0,"A full tour costs you ten minutes you do not have. Save it for the break."]]},
+ {tag:"Safety in two minutes",title:"Say it before the first box moves",html:"<ul><li><b>Lift with your legs,</b> and ask for help with anything heavy.</li><li><b>Wash hands</b> and wear gloves for any open or unpackaged food.</li><li><b>Keep cold food cold.</b> It goes back in the cooler as soon as it is sorted.</li><li><b>Point to the first aid kit</b> and tell them who to find if something goes wrong.</li></ul><p>Follow your food bank's own food safety rules wherever they are stricter.</p>"},
+ {tag:"Real situation",title:"A corporate group of 12 shows up 20 minutes early. Your shift lead is out sick.",q:[
+   ["Ask them to wait outside until the shift starts.",0,"Twelve people waiting outside become twelve people checking their phones and an awkward start."],
+   ["Split them into three crews of four, each led by a returning volunteer.",1,"Best call. Small crews with a lead learn faster, and your regulars get to lead."],
+   ["Put all twelve on the same task so you can watch them.",0,"One big group crowds the station and half of them stand around."]]},
+ {tag:"Your job aid",title:"Before doors open",check:["Name tags ready for every new volunteer","One job per person, written where everyone can see it","Buddy pairs set with returning volunteers","Two-minute safety talk: lifting, gloves, cold food, first aid kit","At the end: thank them and ask them to sign up for the next shift"]},
+ {tag:"Close the loop",title:"The last two minutes matter too",html:"<p>Before a new volunteer leaves, thank them for one specific thing they did, then ask them to pick their next shift while they are still standing there.</p><p>A date on the calendar beats \"check the website.\"</p>"},
+ {tag:"Done",title:"You finished.",html:"<div class='big'>🌱</div><p>Keep the checklist open on your phone during your next shift.</p><p style='margin-top:14px'><b>Was this useful?</b></p><div id='rate'><button class='opt' data-r='1'>Yes, I will use it this week</button><button class='opt' data-r='0'>Not quite. Something was missing</button></div><div class='fb good' id='thanks'>Thanks. Your answer helps make the next version better.</div>"}
+];
+var i=0,answered={};
+var card=document.getElementById('card'),prog=document.getElementById('prog'),count=document.getElementById('count'),back=document.getElementById('back'),next=document.getElementById('next');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function render(){
+  var c=cards[i],h="<div class='tag'>"+c.tag+"</div><h4>"+c.title+"</h4>";
+  if(c.html)h+=c.html;
+  if(c.q){c.q.forEach(function(o,k){h+="<button class='opt' data-k='"+k+"'>"+esc(o[0])+"</button>"});h+="<div class='fb' id='fb'></div>"}
+  if(c.check){c.check.forEach(function(t,k){h+="<label class='check'><input type='checkbox'><span>"+esc(t)+"</span></label>"})}
+  card.innerHTML=h;
+  prog.style.width=((i+1)/cards.length*100)+"%";
+  count.textContent=(i+1)+" / "+cards.length;
+  back.disabled=i===0;
+  next.textContent=i===cards.length-1?"Restart":"Next";
+  next.disabled=!!c.q&&!answered[i];
+  if(c.q){
+    card.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){
+      var k=+b.dataset.k,o=c.q[k],fb=document.getElementById('fb');
+      card.querySelectorAll('.opt').forEach(function(x){x.classList.remove('right','wrong')});
+      b.classList.add(o[1]?'right':'wrong');
+      fb.className='fb show '+(o[1]?'good':'meh');
+      fb.textContent=o[2]+(o[1]?'':' Try another answer.');
+      if(o[1]){answered[i]=true;next.disabled=false;card.querySelectorAll('.opt').forEach(function(x){x.disabled=true})}
+    }});
+  }
+  var rate=document.getElementById('rate');
+  if(rate){rate.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){rate.querySelectorAll('.opt').forEach(function(x){x.disabled=true;x.classList.remove('right')});b.classList.add('right');document.getElementById('thanks').classList.add('show')}})}
+}
+next.onclick=function(){if(i===cards.length-1){i=0;answered={}}else i++;render()};
+back.onclick=function(){if(i>0){i--;render()}};
+render();
+</script>
+</body>
+</html>
