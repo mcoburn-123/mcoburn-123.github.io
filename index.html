@@ -158,6 +158,10 @@ dialog#aid .btn{margin-top:14px;width:100%}
 .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:640px;margin:0 auto;text-align:center}
 .proof div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 10px;font-size:14px;color:var(--muted)}
 .proof .num{display:block;font-size:32px;margin-bottom:4px}
+.why{max-width:640px;margin:18px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:4px 18px}
+.why summary{cursor:pointer;font-weight:600;color:var(--leaf);padding:12px 0;font-size:15px}
+.why summary:focus-visible{outline:2px solid var(--leaf);outline-offset:3px;border-radius:6px}
+.why p{font-size:14px;margin:0 0 12px;line-height:1.55}
 @media(max-width:480px){.proof{grid-template-columns:1fr}}
 #sample h2,#sample .lede{text-align:center;margin-left:auto;margin-right:auto}
 footer{text-align:center}
@@ -192,6 +196,15 @@ footer{text-align:center}
     <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   </div></div>
   <p class="note">Tap, click, or press 1–4 to choose. The meter is a game mechanic, not data.</p>
+  <details class="why">
+    <summary>Why I designed it this way</summary>
+    <p><b>The problem.</b> A new pantry volunteer usually decides during the first shift whether to come back, and the lead running that shift is slammed.</p>
+    <p><b>The learners.</b> Volunteer leads at pantries and meal programs. They're on their feet, short on time, and usually on a phone.</p>
+    <p><b>The objectives.</b> After one play, a lead can welcome a first-timer with a name, one job and a buddy; split a big group into small crews led by regulars; run a two-minute safety talk before the first box moves; and close the shift by booking the next one.</p>
+    <p><b>Why a scenario.</b> Leads don't need a lecture on retention. They need practice making the call under pressure and seeing what it costs next Saturday. Every option is something a reasonable lead might do, and the feedback shows a consequence, not a grade.</p>
+    <p><b>Accessibility.</b> You can play by tap, click or keys 1–4. It respects reduced-motion settings, and the job aid gives the same content as a plain checklist for anyone who'd rather read.</p>
+    <p><b>Evaluation plan (not yet piloted).</b> Level 1: a two-question reaction check after play. Level 2: leads pick the best call on fresh scenarios. Level 3: compare how many new volunteers come back for leads who played versus leads who didn't, using the food bank's own sign-up data.</p>
+  </details>
 </section>
 
 <section id="proof" aria-label="Experience">
