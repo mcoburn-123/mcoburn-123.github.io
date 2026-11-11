@@ -76,10 +76,49 @@ h3{font-size:18px;margin:0 0 8px}
 .edu{margin:0;padding-left:20px;font-size:15px}.edu li{margin-bottom:6px}
 .tools span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:14px}
 footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
+/* fit at a glance */
+.fit{background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px 22px}
+.fit a{display:grid;grid-template-columns:260px 1fr auto;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--soil)}
+.fit a:last-child{border-bottom:0}
+.fit b{font-weight:700}
+.fit span{color:#4a433b;font-size:15px}
+.fit i{font-style:normal;color:var(--leaf);font-weight:600;font-size:14px}
+.fit a:hover b{color:var(--leaf)}
+.fit a:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:6px}
+@media(max-width:700px){.fit a{grid-template-columns:1fr;gap:4px}.fit i{display:none}}
+.cycle>li{scroll-margin-top:20px}
+
+/* splash */
+#splash{display:none;position:fixed;inset:0;z-index:50;background:radial-gradient(120% 140% at 85% 0%,#5c8f52 0%,#3f6b3a 55%,#33582f 100%);color:#fff;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:24px;text-align:center;cursor:pointer;transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+#splash.out{opacity:0;transform:translateY(-28px);pointer-events:none}
+.sp-eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:0;animation:spFade .4s .05s forwards}
+.sp-steps{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px 0;max-width:980px}
+.sp-step{font-weight:600;font-size:clamp(14px,2.1vw,19px);padding:9px 16px;border:1.5px solid rgba(255,255,255,.65);border-radius:999px;opacity:0;transform:translateY(10px);animation:spIn .34s cubic-bezier(.2,.8,.2,1) forwards}
+.sp-step.last{background:var(--sun);border-color:var(--sun);color:var(--soil)}
+.sp-link{width:26px;height:2px;background:rgba(255,255,255,.65);transform:scaleX(0);transform-origin:left;animation:spLine .18s ease-out forwards}
+.sp-tag{font-family:Fraunces,Georgia,serif;font-size:clamp(24px,4vw,38px);font-weight:700;line-height:1.15;max-width:760px;opacity:0;animation:spIn .45s 1.35s cubic-bezier(.2,.8,.2,1) forwards}
+.sp-skip{font-size:12px;opacity:.7;position:absolute;bottom:22px}
+@keyframes spIn{to{opacity:1;transform:none}}
+@keyframes spFade{to{opacity:.85}}
+@keyframes spLine{to{transform:scaleX(1)}}
+@media(max-width:640px){.sp-link{display:none}.sp-steps{gap:8px}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<div id="splash" aria-hidden="true">
+  <div class="sp-eyebrow">M Coburn · Volunteer engagement</div>
+  <div class="sp-steps">
+    <span class="sp-step" style="animation-delay:.15s">Recruit</span><i class="sp-link" style="animation-delay:.3s"></i>
+    <span class="sp-step" style="animation-delay:.33s">Intake</span><i class="sp-link" style="animation-delay:.48s"></i>
+    <span class="sp-step" style="animation-delay:.51s">Train</span><i class="sp-link" style="animation-delay:.66s"></i>
+    <span class="sp-step" style="animation-delay:.69s">Lead</span><i class="sp-link" style="animation-delay:.84s"></i>
+    <span class="sp-step" style="animation-delay:.87s">Recognize</span><i class="sp-link" style="animation-delay:1.02s"></i>
+    <span class="sp-step last" style="animation-delay:1.05s">Measure</span>
+  </div>
+  <div class="sp-tag">The whole volunteer cycle, and the people who run it.</div>
+  <div class="sp-skip">Tap or press any key to skip</div>
+</div>
 
 <header class="hero">
   <div class="wrap">
@@ -87,7 +126,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
     <div class="eyebrow">Volunteer engagement</div>
     <h1>I design volunteer experiences end to end, and I coach the people who run them.</h1>
     <p>Recruitment, training, engagement and recognition, run on data and volunteer feedback. Built for the National MS Society's Director, Mission Volunteer Engagement role.</p>
-    <a class="cta" href="#cycle">See the role, line by line <span aria-hidden="true">↓</span></a>
+    <a class="cta" href="#fit">Fit at a glance <span aria-hidden="true">↓</span></a>
   </div>
   <svg class="sprouts" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C200 20 400 50 600 30 S1000 10 1200 40 V60Z" fill="#fbf8f2"/></svg>
 </header>
@@ -101,16 +140,30 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
   <div><span class="num">27,652 lbs</span>food rescued, 23,000+ meals<small>2024 DNC, with Bright Beat</small></div>
 </div>
 
+<section id="fit">
+  <h2>Fit at a glance</h2>
+  <p class="lede">The role, part by part, with my strongest proof. Each row jumps to the detail.</p>
+  <nav class="fit" aria-label="Fit at a glance">
+    <a href="#c-recruit"><b>Recruit and expand roles</b><span>UIC business school pipeline, still running; 125+ seasonal eco-educators recruited</span><i>Detail ↓</i></a>
+    <a href="#c-barriers"><b>Reduce barriers</b><span>Simplified sign-up and intake; Bloomerang database; shifts planned around volunteer feedback</span><i>Detail ↓</i></a>
+    <a href="#c-training"><b>Training and tools</b><span>Handbook, video, checklists, orientations; a 3-minute training game for leads</span><i>Detail ↓</i></a>
+    <a href="#c-develop"><b>Develop the people who lead</b><span>Coached 125+ eco-educators live on shift; supervised 2 paid mentees; 6 to 10 person crew</span><i>Detail ↓</i></a>
+    <a href="#c-retain"><b>Retain, recognize, tell the story</b><span>~50 new and ~30 returning a season; weekly newsletter to 1,200 people</span><i>Detail ↓</i></a>
+    <a href="#c-data"><b>Data and feedback</b><span>Feedback form put into practice; hours dashboard across three market sites</span><i>Detail ↓</i></a>
+    <a href="#c-ops"><b>Operations and risk</b><span>Emergency plan for 1,400+ guests; $173,022 contract with monthly verified reports</span><i>Detail ↓</i></a>
+  </nav>
+</section>
+
 <section id="mission">
   <h2>Why this role</h2>
   <p class="lede">The National MS Society works so that people affected by MS can live their best lives. MS Ambassadors carry that mission in their own voices, from their own lived experience. The director's job is to make sure they're trained, heard in planning and thanked, and that the regional managers who support them have what they need. That's the work I've been doing on a smaller scale, and it's the work I want to do nationally.</p>
 </section>
 
 <section id="cycle">
-  <h2>The posting, line by line</h2>
+  <h2>The proof, in detail</h2>
   <p class="lede">Each card is a part of the role as the posting describes it (the italic line), with what I actually built or ran. GCM is Green City Market. No volunteer names, and only numbers I can source.</p>
   <ol class="cycle">
-    <li>
+    <li id="c-recruit">
       <h3>Recruitment and new volunteer roles</h3>
       <p class="ask">Identify new volunteer opportunities and expand volunteer roles</p>
       <ul>
@@ -120,7 +173,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
         <li>Recruited, interviewed and onboarded 2 paid Changemaker mentees. <span class="org">2024 DNC</span></li>
       </ul>
     </li>
-    <li>
+    <li id="c-barriers">
       <h3>Reduce barriers</h3>
       <p class="ask">Reduce barriers to participation and make volunteering inclusive and impactful</p>
       <ul>
@@ -129,7 +182,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
         <li>Kept the volunteer database in Bloomerang, and earlier tracked 50+ volunteers in Salesforce. <span class="org">GCM · Garfield Park Conservatory</span></li>
       </ul>
     </li>
-    <li class="featured">
+    <li id="c-training" class="featured">
       <h3>Training and tools</h3>
       <p class="ask">Ensure effective training and tools</p>
       <ul>
@@ -138,7 +191,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
         <li>Taught and certified 100+ adults in permaculture design, and built the online course spaces. <span class="org">Earth Activist Training</span></li>
       </ul>
     </li>
-    <li>
+    <li id="c-develop">
       <h3>Coach and develop the people who lead</h3>
       <p class="ask">Develop talent and foster volunteer leadership</p>
       <ul>
@@ -147,7 +200,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
         <li>Direct a 6 to 10 person field crew across 30+ city lots. <span class="org">MAB</span></li>
       </ul>
     </li>
-    <li>
+    <li id="c-retain">
       <h3>Retain, recognize, tell the story</h3>
       <p class="ask">Retain and recognize volunteers and communicate with purpose</p>
       <ul>
@@ -156,7 +209,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
         <li>Wrote the mentorship story for the convention's final report and started its sustainability video partnership. <span class="org">2024 DNC</span></li>
       </ul>
     </li>
-    <li>
+    <li id="c-data">
       <h3>Data and feedback</h3>
       <p class="ask">Use data and feedback to improve volunteer satisfaction and track engagement metrics</p>
       <ul>
@@ -165,7 +218,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
         <li>Team results: 27,652 lbs of food rescued (23,000+ meals), 73% waste diversion at McCormick Place, and the United Center up from 15% to 33%. <span class="org">2024 DNC</span></li>
       </ul>
     </li>
-    <li>
+    <li id="c-ops">
       <h3>Operations, risk and partners</h3>
       <p class="ask">Planning, tools and workflows; risk and compliance; work with internal teams</p>
       <ul>
@@ -250,5 +303,22 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
 
 <footer><div class="wrap">M Coburn · Chicago · <a href="mailto:cultivate.regenerate@gmail.com">cultivate.regenerate@gmail.com</a> · <a href="/">Portfolio home</a></div></footer>
 
+<script>
+(function(){
+  var sp=document.getElementById('splash');if(!sp)return;
+  try{
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    if(/[?&]nosplash/.test(location.search)||location.hash)return;
+    if(sessionStorage.getItem('veSplash'))return;
+    sessionStorage.setItem('veSplash','1');
+  }catch(e){}
+  var root=document.documentElement,done=false;
+  sp.style.display='flex';root.style.overflow='hidden';
+  function end(){if(done)return;done=true;sp.classList.add('out');root.style.overflow='';
+    document.removeEventListener('keydown',end);setTimeout(function(){sp.style.display='none'},500)}
+  sp.addEventListener('click',end);document.addEventListener('keydown',end);
+  setTimeout(end,2600);
+})();
+</script>
 </body>
 </html>
