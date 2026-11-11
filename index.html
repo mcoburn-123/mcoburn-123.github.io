@@ -99,6 +99,8 @@ header.hero{position:relative;overflow:hidden;padding-bottom:64px;background:rad
 header.hero .sprouts{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:46px}
 .cta{display:inline-flex;gap:8px;align-items:center;margin-top:20px;background:var(--sun);color:var(--soil);font-weight:600;text-decoration:none;border-radius:999px;padding:12px 22px;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:transform .2s,box-shadow .2s}
 .cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.cta.alt{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.85);box-shadow:none;margin-left:10px;padding:10px 20px}
+@media(max-width:520px){.cta.alt{margin-left:0}}
 .cta:focus-visible,.btn:focus-visible,.opt:focus-visible,.aid-btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 @media (prefers-reduced-motion:no-preference){
   header.hero .eyebrow,header.hero h1,header.hero p,header.hero .cta,header.hero .contact{animation:rise .7s cubic-bezier(.2,.8,.2,1) backwards}
@@ -175,6 +177,7 @@ footer{text-align:center}
     <h1>M Coburn</h1>
     <p>I design short, practical training for people who learn on a busy shift.</p>
     <a class="cta" href="#sample">Play the 3-minute shift <span aria-hidden="true">→</span></a>
+    <a class="cta alt" href="/volunteer-engagement/">How I run a volunteer program <span aria-hidden="true">→</span></a>
   </div>
   <svg class="sprouts" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C200 20 400 50 600 30 S1000 10 1200 40 V60Z" fill="#fbf8f2"/></svg>
 </header>
@@ -196,6 +199,7 @@ footer{text-align:center}
     <div class="dots" id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   </div></div>
   <p class="note">Tap, click, or press 1–4 to choose. The meter is a game mechanic, not data.</p>
+  <p class="note">This is the onboarding piece of a full volunteer program. <a href="/volunteer-engagement/">See the whole cycle, from recruitment to recognition →</a></p>
   <details class="rationale">
     <summary>Why I designed it this way</summary>
     <p><b>The problem.</b> A new pantry volunteer usually decides during the first shift whether to come back, and the lead running that shift is slammed.</p>

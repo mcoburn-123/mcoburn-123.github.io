@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="M Coburn, Chicago: volunteer programs designed end to end, from recruitment and intake to training, recognition and measurement, plus training for the people who run them.">
+<meta property="og:title" content="M Coburn · Volunteer Engagement">
+<meta property="og:description" content="The full volunteer cycle, with real proof: Green City Market's 400+ volunteer community, the 2024 DNC food recovery, and training for the leads who run the shift.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<title>M Coburn · Volunteer Engagement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--soil:#2f2a24;--leaf:#3f6b3a;--leaf-2:#5c8f52;--sprout:#e8f0e1;--sun:#e9a93b;--paper:#fbf8f2;--line:#e3ddd2;--muted:#6d655b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--soil);font:17px/1.55 Inter,system-ui,sans-serif}
+a{color:var(--leaf)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.hero{position:relative;overflow:hidden;color:#fff;padding:36px 0 64px;background:radial-gradient(120% 140% at 85% 0%,#5c8f52 0%,#3f6b3a 55%,#33582f 100%)}
+header.hero .sprouts{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:46px}
+.back{color:#fff;opacity:.85;font-size:14px;text-decoration:none}
+.back:hover{opacity:1;text-decoration:underline}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.85;margin:22px 0 10px}
+header.hero h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(28px,5.2vw,42px);line-height:1.12;margin:0 0 12px;max-width:760px}
+header.hero p{margin:0;max-width:660px;font-size:18px;opacity:.95}
+.cta{display:inline-flex;gap:8px;align-items:center;margin-top:20px;background:var(--sun);color:var(--soil);font-weight:600;text-decoration:none;border-radius:999px;padding:12px 22px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.cta:focus-visible,.back:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+section{padding:40px 0 8px}
+h2{font-family:Fraunces,Georgia,serif;font-size:28px;margin:0 0 6px}
+h3{font-size:18px;margin:0 0 8px}
+.lede{color:var(--muted);margin:0 0 22px;max-width:680px}
+.num{font-family:Fraunces,Georgia,serif;color:var(--leaf);font-weight:700}
+
+/* 30-second strip */
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-34px;position:relative}
+.proof div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 12px;font-size:14px;color:var(--muted);text-align:center;box-shadow:0 6px 20px rgba(47,42,36,.06)}
+.proof .num{display:block;font-size:30px;line-height:1.1;margin-bottom:4px}
+.proof small{display:block;margin-top:4px;font-size:12px;color:#8a8176}
+@media(max-width:760px){.proof{grid-template-columns:1fr 1fr}}
+
+/* cycle */
+.cycle{list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:1fr;counter-reset:step}
+@media(min-width:760px){.cycle{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.cycle{grid-template-columns:1fr 1fr 1fr}}
+.cycle li{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px;position:relative;counter-increment:step}
+.cycle li::before{content:counter(step);position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;background:var(--sprout);color:#2c4f27;font-size:13px;font-weight:700;display:grid;place-items:center}
+.cycle h3{padding-right:34px}
+.cycle .ask{font-size:13px;color:var(--muted);margin:-4px 0 10px;font-style:italic}
+.cycle ul{margin:0;padding-left:18px;font-size:15px}
+.cycle ul li{all:unset;display:list-item;margin-bottom:7px}
+.cycle ul li::before{content:none}
+.org{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--leaf-2);white-space:nowrap}
+.cycle li.featured{border:2px solid var(--leaf-2)}
+
+/* onboarding piece */
+.onboard{display:grid;gap:22px;grid-template-columns:1fr;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+@media(min-width:820px){.onboard{grid-template-columns:1.3fr 1fr;align-items:center}}
+.onboard ol{margin:8px 0 0;padding-left:20px;font-size:15px}
+.onboard ol li{margin-bottom:6px}
+.side{background:var(--sprout);border-radius:16px;padding:18px;font-size:15px}
+.side b{display:block;margin-bottom:6px}
+.btn{display:inline-block;font-weight:600;font-size:15px;border-radius:999px;padding:11px 20px;background:var(--leaf);color:#fff;text-decoration:none;margin-top:14px}
+.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+
+/* 60 days */
+.days{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){.days{grid-template-columns:repeat(3,1fr)}}
+.days>div{border-top:4px solid var(--leaf-2);background:#fff;border-radius:0 0 16px 16px;padding:16px 18px;font-size:15px}
+.days .when{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--leaf-2);margin-bottom:4px}
+.days ul{margin:6px 0 0;padding-left:18px}
+.days li{margin-bottom:6px}
+.fine{font-size:13px;color:var(--muted);margin-top:12px}
+
+.tools{display:flex;flex-wrap:wrap;gap:8px}
+.edu{margin:0;padding-left:20px;font-size:15px}.edu li{margin-bottom:6px}
+.tools span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:14px}
+footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="back" href="/">← M Coburn · portfolio home</a>
+    <div class="eyebrow">Volunteer engagement</div>
+    <h1>I design volunteer experiences end to end, and I coach the people who run them.</h1>
+    <p>Recruitment, training, engagement and recognition, run on data and volunteer feedback. Built for the National MS Society's Director, Mission Volunteer Engagement role.</p>
+    <a class="cta" href="#cycle">See the role, line by line <span aria-hidden="true">↓</span></a>
+  </div>
+  <svg class="sprouts" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C200 20 400 50 600 30 S1000 10 1200 40 V60Z" fill="#fbf8f2"/></svg>
+</header>
+
+<main class="wrap">
+
+<div class="proof" aria-label="Proof at a glance">
+  <div><span class="num">400+</span>volunteer community led<small>Green City Market</small></div>
+  <div><span class="num">~50 / ~30</span>new / returning volunteers a season<small>Green City Market</small></div>
+  <div><span class="num">125+</span>seasonal eco-educators recruited and trained<small>plus 100+ adults taught and certified</small></div>
+  <div><span class="num">27,652 lbs</span>food rescued, 23,000+ meals<small>2024 DNC, with Bright Beat</small></div>
+</div>
+
+<section id="mission">
+  <h2>Why this role</h2>
+  <p class="lede">The National MS Society works so that people affected by MS can live their best lives. MS Ambassadors carry that mission in their own voices, from their own lived experience. The director's job is to make sure they're trained, heard in planning and thanked, and that the regional managers who support them have what they need. That's the work I've been doing on a smaller scale, and it's the work I want to do nationally.</p>
+</section>
+
+<section id="cycle">
+  <h2>The posting, line by line</h2>
+  <p class="lede">Each card is a part of the role as the posting describes it (the italic line), with what I actually built or ran. GCM is Green City Market. No volunteer names, and only numbers I can source.</p>
+  <ol class="cycle">
+    <li>
+      <h3>Recruitment and new volunteer roles</h3>
+      <p class="ask">Identify new volunteer opportunities and expand volunteer roles</p>
+      <ul>
+        <li>Built a volunteer pipeline with UIC's business school that's still running. <span class="org">GCM</span></li>
+        <li>Brought in corporate volunteer groups, including Begyle Brewing and UIC teams. <span class="org">GCM</span></li>
+        <li>Recruited 125+ seasonal eco-educators for public event waste stations.</li>
+        <li>Recruited, interviewed and onboarded 2 paid Changemaker mentees. <span class="org">2024 DNC</span></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Reduce barriers</h3>
+      <p class="ask">Reduce barriers to participation and make volunteering inclusive and impactful</p>
+      <ul>
+        <li>Simplified sign-up and intake for new market volunteers. <span class="org">GCM</span></li>
+        <li>Planned shifts around a volunteer base that was mostly retirees, using what they told me. <span class="org">GCM</span></li>
+        <li>Kept the volunteer database in Bloomerang, and earlier tracked 50+ volunteers in Salesforce. <span class="org">GCM · Garfield Park Conservatory</span></li>
+      </ul>
+    </li>
+    <li class="featured">
+      <h3>Training and tools</h3>
+      <p class="ask">Ensure effective training and tools</p>
+      <ul>
+        <li>Wrote the volunteer handbook, built training slides, a short video and field checklists, and ran orientations. <span class="org">GCM</span></li>
+        <li>Designed <a href="/#sample">Your First 15 Minutes</a>, a 3-minute shift game that trains the lead who welcomes new volunteers (more below).</li>
+        <li>Taught and certified 100+ adults in permaculture design, and built the online course spaces. <span class="org">Earth Activist Training</span></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Coach and develop the people who lead</h3>
+      <p class="ask">Develop talent and foster volunteer leadership</p>
+      <ul>
+        <li>Trained, scheduled and coached the 125+ eco-educators live on shift.</li>
+        <li>Supervised the 2 paid mentees day to day, with task lists I ran. <span class="org">2024 DNC</span></li>
+        <li>Direct a 6 to 10 person field crew across 30+ city lots. <span class="org">MAB</span></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Retain, recognize, tell the story</h3>
+      <p class="ask">Retain and recognize volunteers and communicate with purpose</p>
+      <ul>
+        <li>Wrote a weekly newsletter to 1,200 people, with volunteer stories and thanks by name. <span class="org">GCM</span></li>
+        <li>Ran recognition beyond the newsletter shout-outs. <span class="org">GCM</span></li>
+        <li>Wrote the mentorship story for the convention's final report and started its sustainability video partnership. <span class="org">2024 DNC</span></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Data and feedback</h3>
+      <p class="ask">Use data and feedback to improve volunteer satisfaction and track engagement metrics</p>
+      <ul>
+        <li>Ran a volunteer feedback form, read it and put what volunteers said into practice. <span class="org">GCM</span></li>
+        <li>Built a volunteer hours dashboard tying shift scheduling to one summary across three market locations and every volunteer type. <span class="org">GCM</span></li>
+        <li>Team results: 27,652 lbs of food rescued (23,000+ meals), 73% waste diversion at McCormick Place, and the United Center up from 15% to 33%. <span class="org">2024 DNC</span></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Operations, risk and partners</h3>
+      <p class="ask">Planning, tools and workflows; risk and compliance; work with internal teams</p>
+      <ul>
+        <li>Wrote the emergency action plan for our biggest event (1,400+ guests). <span class="org">GCM</span></li>
+        <li>Built the hours budget for the mentorship program, and worked alongside the convention committee, the Host Committee and City staff. <span class="org">2024 DNC</span></li>
+        <li>Run a $173,022 land contract with monthly photo- and GPS-verified reports to the funder. <span class="org">MAB</span></li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<section id="onboarding">
+  <h2>Training and tools, in practice: Your First 15 Minutes</h2>
+  <p class="lede">A new volunteer usually decides at their first activity whether to come back. The person who controls that moment is the volunteer lead, who's busy. So I built the training for the lead.</p>
+  <div class="onboard">
+    <div>
+      <h3>What the lead practices, in 3 minutes</h3>
+      <ol>
+        <li>Welcome a first-timer with their name, one job and a buddy.</li>
+        <li>Split a big group into small crews led by returning volunteers.</li>
+        <li>Give a two-minute safety talk before the work starts.</li>
+        <li>Close by booking the next date, on the spot.</li>
+      </ol>
+      <a class="btn" href="/#sample">Play it (3 minutes, works on a phone)</a>
+    </div>
+    <div class="side">
+      <b>How it would carry over to Ambassadors</b>
+      The scenes here come from a food pantry shift. For Ambassadors, the same format would practice their own moments, written with Ambassadors from their lived experience: a first talk, a first advocacy visit. No login. To measure it: new volunteers active again within 60 days, compared with before. It hasn't been piloted yet; that's the plan.
+    </div>
+  </div>
+</section>
+
+<section id="first-60-days">
+  <h2>What I'd do in my first 60 days</h2>
+  <p class="lede">A plan for the MS Ambassador Program and the regional volunteer engagement managers, not a promise of results.</p>
+  <div class="days">
+    <div>
+      <div class="when">Days 1–20 · Listen</div>
+      <ul>
+        <li>One-on-ones with each regional manager and the assistant director: what's working, what's stuck, what they want to grow into.</li>
+        <li>Sit in on an Ambassador training and talk with Ambassadors in several regions about what made them stay.</li>
+        <li>Pull a year of data from the volunteer platform: sign-up to first activity, and where people drop off.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="when">Days 21–40 · Map</div>
+      <ul>
+        <li>Walk the intake path as a new Ambassador and mark every barrier.</li>
+        <li>Agree with the managers on a short scorecard: time to first activity, 90-day retention, satisfaction.</li>
+        <li>Meet Digital Programs, Marketing, Advocacy and Development to learn what they need from volunteers.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="when">Days 41–60 · Fix one thing</div>
+      <ul>
+        <li>Pilot one intake fix in one region and compare it with the others.</li>
+        <li>Start a monthly story pipeline: each region sends one Ambassador story, told the way they want it told.</li>
+        <li>Set a monthly managers' huddle around the scorecard, with an Ambassador voice in the room.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>Platforms I've worked in</h2>
+  <div class="tools">
+    <span>Bloomerang</span><span>Salesforce</span><span>Airtable</span><span>Eventbrite</span><span>Google Workspace</span><span>Excel</span><span>Tableau</span><span>Canva</span><span>Google Classroom</span><span>Mighty Networks</span>
+  </div>
+  <p class="fine">Galaxy Digital would be new to me. I've learned every platform above on the job, and I build my own tools too.</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul class="edu">
+    <li>MBA/MPA in Sustainable Solutions, Presidio Graduate School (in progress). Coursework includes Multisector Partnerships and a systems dynamics team project on community resilience.</li>
+    <li>B.A., Integrated Marketing &amp; Sustainability, University of Redlands</li>
+    <li>Permaculture Design Certificate, Earth Activist Training · Produce Safety Alliance certification</li>
+  </ul>
+</section>
+
+</main>
+
+<footer><div class="wrap">M Coburn · Chicago · <a href="mailto:cultivate.regenerate@gmail.com">cultivate.regenerate@gmail.com</a> · <a href="/">Portfolio home</a></div></footer>
+
+</body>
+</html>
