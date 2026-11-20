@@ -343,10 +343,10 @@ var PEOPLE=[
  {N:"Marcus",sub:"he",Sub:"He",obj:"him",pos:"his",plus:"his cousin"}
 ];
 var ITEMS={
- clip:{name:"the clipboard",room:"door",where:"on its hook by the door",line:"Sign-in sheet on top. A pen on a string. It makes you look like you know things."},
- tags:{name:"the roll of name tags",room:"table",where:"in the sorting table drawer",line:"HELLO MY NAME IS, a couple hundred times over. The marker's dry. There's a pen."},
- key:{name:"the cooler key",room:"cooler",where:"on a nail by the walk-in",line:"It's tied to a spatula so nobody pockets it. Somebody always pockets it."},
- truck:{name:"the hand truck",room:"stairs",where:"under the stairs",line:"The left tire's been flat since spring. It's coming with you anyway."}
+ clip:{name:"the clipboard",room:"door",where:"on its hook by the door",line:"Sign-in sheet on top. A pen on a string. It makes you look like you know things.",cost:"The line watched you stand at the hook for a full minute.",fx:{m:1,l:-1}},
+ tags:{name:"the roll of name tags",room:"table",where:"in the sorting table drawer",line:"HELLO MY NAME IS, a couple hundred times over. The marker's dry. There's a pen.",cost:"Two regulars saw the roll and started handing them out. The drawer took a piece of your thumb.",fx:{c:1,m:-1}},
+ key:{name:"the cooler key",room:"cooler",where:"on a nail by the walk-in",line:"It's tied to a spatula so nobody pockets it. Somebody always pockets it.",cost:"One less thing to hunt for. Somebody at the table needed you for that minute and found Earl instead.",fx:{m:1,c:-1}},
+ truck:{name:"the hand truck",room:"stairs",where:"under the stairs",line:"The left tire's been flat since spring. It's coming with you anyway.",cost:"Three people cleared a path for it. Forty feet, pulling left the whole way, and your shoulder noticed.",fx:{c:1,m:-1}}
 };
 var ART={
  clip:'<rect x="34" y="26" width="52" height="72" rx="5" fill="#c9a26b" stroke="#2f2a24" stroke-width="3"/><rect x="41" y="38" width="38" height="52" fill="#fff" stroke="#2f2a24" stroke-width="2"/><rect x="48" y="20" width="24" height="12" rx="3" fill="#6d655b" stroke="#2f2a24" stroke-width="3"/><path d="M47 50h26M47 60h26M47 70h18" stroke="#2f2a24" stroke-width="2.5"/>',
@@ -588,23 +588,31 @@ function scene(){
   show(h);
   stage.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){choose(+b.dataset.n)}});
 }
+/* move the meters, animate them and describe it; shared by calls and item pickups */
+function applyFx(fx){
+  var up=false,down=false,html='',parts=[];
+  ['l','c','m'].forEach(function(k){$('m-'+k).querySelector('.delta').className='delta'});
+  ['l','c','m'].forEach(function(k){
+    var want=fx[k]||0;if(!want){return}
+    var was=S.m[k];S.m[k]=Math.max(0,Math.min(MAX,was+want));
+    var d=S.m[k]-was;
+    if(!d){ /* already full: say so instead of a phantom +1 */
+      html+='<li class="up">'+MNAME[k]+' full</li>';parts.push(MNAME[k]+" is already full, "+MAX+" of "+MAX);return}
+    drawMeter(k,d);
+    if(d>0)up=true;else down=true;
+    html+='<li class="'+(d>0?'up':'down')+'">'+MNAME[k]+' '+sign(d)+'</li>';
+    parts.push(MNAME[k]+(d>0?" up ":" down ")+Math.abs(d)+", now "+S.m[k]+" of "+MAX);
+  });
+  if(down)SFX.down();if(up)setTimeout(SFX.up,down?160:0);
+  return {html:html,parts:parts,empty:['l','c','m'].filter(function(k){return S.m[k]<=0})[0]};
+}
 function choose(n){
-  var o=S.opts[n],sc=S.cur,parts=[],fxh='';
+  var o=S.opts[n],sc=S.cur;
   S.calls.push({slot:S.slot,t:o.t,fx:o.fx});
   for(var k in o.f){if(k==='load')S.flags.load+=o.f[k];else S.flags[k]=o.f[k]}
   if(sc.kind)S.flags.kind=sc.kind;
   if(sc.vp)S.flags.vp=1;
-  var up=false,down=false;
-  ['l','c','m'].forEach(function(k){
-    var d=o.fx[k]||0;if(!d){return}
-    S.m[k]=Math.max(0,Math.min(MAX,S.m[k]+d));
-    drawMeter(k,d);
-    if(d>0)up=true;else down=true;
-    fxh+='<li class="'+(d>0?'up':'down')+'">'+MNAME[k]+' '+sign(d)+'</li>';
-    parts.push(MNAME[k]+(d>0?" up ":" down ")+Math.abs(d)+", now "+S.m[k]+" of "+MAX);
-  });
-  if(down)SFX.down();if(up)setTimeout(SFX.up,down?160:0);
-  var empty=['l','c','m'].filter(function(k){return S.m[k]<=0})[0];
+  var ap=applyFx(o.fx),fxh=ap.html,parts=ap.parts,empty=ap.empty;
   var last=S.slot===DECK.length-1,nextRoom=last?null:DECK[S.slot+1][S.v[S.slot+1]].room,label,fn;
   if(empty){S.early=empty;label="See what happened";fn=finalView}
   else if(last){label="Skip ahead seven days";fn=finalView}
@@ -620,7 +628,7 @@ function choose(n){
 }
 function pickView(i){
   var pair=S.picks[i],next=DECK[S.slot+1][S.v[S.slot+1]].room,t={};
-  var h='<h3>On the way to '+ROOM[next]+'</h3><p>You\'ve got one free hand and about a minute. What do you grab?</p><ol class="opts">';
+  var h='<h3>On the way to '+ROOM[next]+'</h3><p>You\'ve got one free hand and about a minute. Whatever you grab, somebody pays for the minute.</p><ol class="opts">';
   pair.forEach(function(id,n){
     h+='<li><button class="opt" data-id="'+id+'"><span class="key" aria-hidden="true">'+(n+1)+'</span><span>'+ITEMS[id].name.replace(/^the /,'The ')+'<span class="tagline">It\'s '+ITEMS[id].where+'.</span></span></button></li>';
     t[ITEMS[id].room]=function(){itemView(id)};
@@ -630,13 +638,20 @@ function pickView(i){
   stage.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){itemView(b.dataset.id)}});
 }
 function itemView(id){
-  S.bag.push(id);drawBag();setTargets({});placeYou(ITEMS[id].room);SFX.item();
+  var it=ITEMS[id];
+  S.bag.push(id);drawBag();setTargets({});placeYou(it.room);
+  S.calls.push({slot:S.slot,t:"grab "+it.name,fx:it.fx});
+  var ap=applyFx(it.fx);
+  setTimeout(SFX.item,220);
   var rays='';for(var a=0;a<8;a++)rays+='<path d="M60 60L'+(60+56*Math.cos(a*Math.PI/4)).toFixed(1)+' '+(60+56*Math.sin(a*Math.PI/4)).toFixed(1)+'" stroke="#e9a93b" stroke-width="5" stroke-linecap="round"/>';
   var h='<div class="got"><div class="art"><svg class="rays" viewBox="0 0 120 120" aria-hidden="true">'+rays+'<circle cx="60" cy="60" r="40" fill="#fbf1dc"/></svg><svg class="item" viewBox="0 0 120 120" aria-hidden="true">'+ART[id]+'</svg></div>'+
-        '<h3 class="big">You got '+ITEMS[id].name+'.</h3><p>'+ITEMS[id].line+'</p><p class="hint">It\'ll give you a choice later that you wouldn\'t have had.</p></div>'+act(goBtn("Keep moving"));
+        '<h3 class="big">You got '+it.name+'.</h3><p>'+it.line+'</p><p>'+it.cost+'</p>'+
+        '<ul class="fx" style="justify-content:center" aria-label="Meter changes">'+ap.html+'</ul>'+
+        '<p class="hint">It\'ll give you a choice later that you wouldn\'t have had.</p></div>'+act(goBtn(ap.empty?"See what happened":"Keep moving"));
   show(h);
-  $('go').onclick=function(){SFX.step();S.slot++;scene()};
-  say("You got "+ITEMS[id].name+". "+ITEMS[id].line);
+  if(ap.empty){S.early=ap.empty;$('go').onclick=finalView}
+  else $('go').onclick=function(){SFX.step();S.slot++;scene()};
+  say("You got "+it.name+". "+it.line+" "+it.cost+" "+ap.parts.join(". ")+".");
 }
 
 /* ---------- next Saturday ---------- */
