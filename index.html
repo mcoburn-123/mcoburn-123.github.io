@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="M Coburn, learning designer in Chicago. Play a three-minute Saturday shift as a pantry volunteer lead: three meters, and every call costs something.">
-<meta property="og:title" content="Your First 15 Minutes · M Coburn">
-<meta property="og:description" content="A 3-minute Saturday shift for pantry volunteer leads. The line, the crew, you. Every call feeds one and costs another.">
+<meta name="description" content="Thirteen years of training the people who do the work. Pick how much of it you want to see. Walk the career, see the proof, or play a three-minute volunteer shift.">
+<meta property="og:title" content="M Coburn">
+<meta property="og:description" content="Thirteen years of training the people who do the work. Pick how much of it you want to see.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mcoburn-123.github.io/">
-<meta property="og:image" content="https://mcoburn-123.github.io/og.png">
+<meta property="og:image" content="https://mcoburn-123.github.io/og-home.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A drawn church basement map with four rooms and three rows of sprouts, beets and carrots. Text: Your First 15 Minutes, a 3-minute volunteer shift game.">
+<meta property="og:image:alt" content="A drawn food forest in four layers, overstory to groundcover, each labelled as a way into M Coburn's work.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://mcoburn-123.github.io/og.png">
+<meta name="twitter:image" content="https://mcoburn-123.github.io/og-home.png">
 <link rel="canonical" href="https://mcoburn-123.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
-<title>M Coburn · Learning Design Portfolio</title>
+<title>M Coburn · Volunteer and community programs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
@@ -198,6 +198,54 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:15px;text-align:center}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* ---- Home: the guild chooser (replaces the old hero) ---- */
+.home{background:var(--wall);border-bottom:1px solid var(--edge);padding:var(--s5) 0 var(--s5)}
+.home h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,6vw,46px);line-height:1.1;margin:0}
+.home .htag{margin:var(--s1) 0 0;color:var(--muted)}
+.home .hook{margin:var(--s3) 0 var(--s4);font-size:20px;line-height:1.45;max-width:40ch}
+.home .hgrid{display:grid;grid-template-columns:1fr;gap:var(--s4);align-items:start}
+@media (min-width:880px){.home .hgrid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}}
+.home .hfig{margin:0;display:flex;flex-direction:column;gap:var(--s2)}
+.home figcaption{font-size:15px;color:var(--muted)}
+.guild{width:100%;height:auto;display:block;background:var(--paper);border:1px solid var(--edge);border-radius:16px}
+.guild text{fill:var(--soil)}
+.guild .lay{font-size:15px;fill:var(--muted);letter-spacing:.02em}
+.guild .ttl{font-family:var(--serif);font-weight:700;font-size:21px}
+.guild .tm{font-size:15px;fill:var(--muted)}
+.guild .band{fill:transparent;stroke:transparent;stroke-width:2;transition:fill .2s}
+.guild .layer:hover .band{fill:var(--sprout)}
+.guild .layer:focus{outline:none}
+.guild .layer:focus-visible .band{fill:var(--sprout);stroke:var(--leaf-d);stroke-width:3}
+.guild .trunk{fill:none;stroke:#6b5338;stroke-width:9;stroke-linecap:round}
+.guild .trunk.thin{stroke-width:5}
+.guild .leaf circle,.guild .leaf ellipse{stroke:rgba(0,0,0,.18);stroke-width:1.5;stroke-dasharray:5 4}
+.guild .l1{fill:#2c4f27}.guild .l2{fill:#3f6b3a}.guild .l3{fill:#6f8f3a}.guild .l4{fill:#8fb070}
+.guild .fruit{fill:var(--sun)}.guild .flower{fill:#f4efe2}.guild .berry{fill:var(--beet)}.guild .bloom{fill:var(--sun)}
+.guild .soil{fill:#e6dccb}.guild .groundline{stroke:var(--soil);stroke-width:2;opacity:.5}
+.guild .root{fill:none;stroke:#b39b7c;stroke-width:2;stroke-linecap:round}
+.guild .fig{transform-box:view-box}
+@media (prefers-reduced-motion:no-preference){
+  .guild .fig{animation:grow .6s cubic-bezier(.2,.8,.3,1) both}
+  .guild .ground .fig{animation-delay:0s}.guild .shrub .fig{animation-delay:.15s}
+  .guild .under .fig{animation-delay:.3s}.guild .canopy .fig{animation-delay:.45s}
+  .guild .layer:hover .fig,.guild .layer:focus-visible .fig{animation:sway 1.6s ease-in-out infinite alternate}
+}
+@keyframes grow{from{transform:scaleY(.55);opacity:0}to{transform:none;opacity:1}}
+@keyframes sway{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
+.home .hside{display:flex;flex-direction:column;gap:var(--s2)}
+.hlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--s2)}
+.hrow{display:grid;grid-template-columns:40px 1fr auto;gap:var(--s3);align-items:center;min-height:64px;padding:12px 16px;background:var(--paper);border:1px solid var(--edge);border-radius:12px;text-decoration:none;color:var(--soil);transition:border-color .2s}
+.hrow:hover{border-color:var(--leaf)}
+.hrow:focus-visible{outline:3px solid var(--leaf-d);outline-offset:2px}
+.hrow small{display:block;font-size:14px;color:var(--muted);letter-spacing:.02em}
+.hrow b{display:block;font-family:var(--serif);font-size:20px;line-height:1.2}
+.hrow .hl{display:block;color:var(--muted);font-size:16px}
+.hrow .hm{font-size:15px;color:var(--muted);white-space:nowrap}
+.hk{width:40px;height:42px}
+@media (max-width:640px){.guild text{display:none}.guild{max-height:400px}}
+.hfoot{margin:var(--s1) 0 0;font-size:16px;color:var(--muted)}
+.hfoot a{color:var(--leaf-d);display:inline-block;padding:12px 0}
 </style>
 </head>
 <body>
@@ -208,18 +256,35 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:15px;text-align:center}
   <symbol id="i-carrot" viewBox="0 0 24 24"><path d="M7 9h10l-5 14z"/><path d="M12 9V2M12 8l-4-4M12 8l4-4"/></symbol>
 </svg>
 
-<header class="hero">
+<header class="home" id="top">
   <div class="wrap">
-    <div class="eyebrow">Learning design portfolio</div>
     <h1>M Coburn</h1>
-    <p>I design short, practical training for people who learn on a busy shift.</p>
-    <div class="ctas">
-      <a class="cta" href="#sample">Play the 3-minute shift <span aria-hidden="true">→</span></a>
-      <a class="cta alt" href="/volunteer-engagement/">How I run a volunteer program <span aria-hidden="true">→</span></a>
+    <p class="htag">Volunteer and Community Program Leader · Food Systems and Green Spaces</p>
+    <p class="hook">Thirteen years of training the people who do the work. Pick how much of it you want to see.</p>
+    <div class="hgrid">
+      <figure class="hfig"><svg class="guild" viewBox="0 0 560 476" role="group" aria-labelledby="guildCap"><rect x="0" y="432" width="560" height="44" class="soil"/><path class="root" d="M96 432 c -8 12 -26 18 -40 22 M96 432 c 10 14 28 18 44 20 M196 432 c -6 10 -18 14 -30 16 M196 432 c 8 12 20 16 34 18"/><line x1="0" y1="432" x2="560" y2="432" class="groundline"/><a class="layer canopy" href="https://mcoburn-123.github.io/career/" aria-label="Overstory: Walk my career, 3 min"><rect class="band" x="2" y="10" width="556" height="140" rx="12"/><g class="fig" style="transform-origin:100px 432px"><path d="M96 432 C 98 330, 92 250, 100 150" class="trunk" />
+   <path d="M100 210 C 118 196, 128 180, 132 166" class="trunk thin"/><path d="M99 236 C 82 222, 72 206, 70 192" class="trunk thin"/>
+   <g class="leaf l1"><circle cx="100" cy="78" r="50"/><circle cx="58" cy="104" r="38"/><circle cx="142" cy="104" r="38"/><circle cx="100" cy="122" r="34"/></g>
+   <g class="fruit"><circle cx="76" cy="92" r="4"/><circle cx="128" cy="76" r="4"/><circle cx="112" cy="118" r="4"/></g></g><text class="lay" x="316" y="65.0">Overstory · the big view</text><text class="ttl" x="316" y="89.0">Walk my career</text><text class="tm" x="316" y="111.0">3 min</text></a><a class="layer under" href="https://mcoburn-123.github.io/volunteer-engagement/" aria-label="Understory: The volunteer page, 5 min read"><rect class="band" x="2" y="154" width="556" height="106" rx="12"/><g class="fig" style="transform-origin:198px 432px"><path d="M196 432 C 197 360, 193 300, 198 214" class="trunk"/>
+   <g class="leaf l2"><circle cx="198" cy="196" r="34"/><circle cx="172" cy="214" r="24"/><circle cx="224" cy="214" r="24"/></g>
+   <g class="flower"><circle cx="186" cy="186" r="3.5"/><circle cx="210" cy="200" r="3.5"/><circle cx="198" cy="220" r="3.5"/></g></g><text class="lay" x="316" y="181.0">Understory · how I'd run it</text><text class="ttl" x="316" y="205.0">The volunteer</text><text class="ttl" x="316" y="227.0">page</text><text class="tm" x="316" y="249.0">5 min read</text></a><a class="layer shrub" href="#sample" aria-label="Shrub layer: Play a volunteer shift, 3 min"><rect class="band" x="2" y="264" width="556" height="96" rx="12"/><g class="fig" style="transform-origin:150px 432px"><g class="leaf l3"><ellipse cx="146" cy="330" rx="40" ry="30"/><ellipse cx="122" cy="342" rx="24" ry="20"/><ellipse cx="248" cy="338" rx="30" ry="24"/></g>
+   <g class="berry"><circle cx="136" cy="318" r="4"/><circle cx="156" cy="330" r="4"/><circle cx="142" cy="344" r="4"/><circle cx="252" cy="330" r="4"/><circle cx="240" cy="344" r="4"/></g></g><text class="lay" x="316" y="286.0">Shrub layer · hands on</text><text class="ttl" x="316" y="310.0">Play a</text><text class="ttl" x="316" y="332.0">volunteer shift</text><text class="tm" x="316" y="354.0">3 min</text></a><a class="layer ground" href="https://mcoburn-123.github.io/career/?view=proof" aria-label="Groundcover: Just the proof, 30 sec"><rect class="band" x="2" y="364" width="556" height="66" rx="12"/><g class="fig" style="transform-origin:150px 432px"><g class="leaf l4"><ellipse cx="34" cy="426" rx="22" ry="10"/><ellipse cx="70" cy="424" rx="20" ry="12"/><ellipse cx="130" cy="425" rx="26" ry="11"/><ellipse cx="180" cy="426" rx="18" ry="9"/><ellipse cx="226" cy="424" rx="24" ry="12"/><ellipse cx="270" cy="426" rx="16" ry="9"/></g>
+   <g class="bloom"><circle cx="64" cy="414" r="3"/><circle cx="138" cy="416" r="3"/><circle cx="222" cy="413" r="3"/></g></g><text class="lay" x="316" y="382.0">Groundcover · quick to scan</text><text class="ttl" x="316" y="406.0">Just the proof</text><text class="tm" x="316" y="428.0">30 sec</text></a></svg>
+        <figcaption id="guildCap">Drawn like a food forest: tall trees up top, groundcover at your feet. Each layer is a way in.</figcaption>
+      </figure>
+      <div class="hside">
+        <nav aria-label="Pick a way in"><ul class="hlist"><li><a class="hrow" href="https://mcoburn-123.github.io/career/"><svg class="hk" viewBox="0 0 40 42" aria-hidden="true" focusable="false"><path d="M20 40 V18" stroke="#6b5338" stroke-width="3" fill="none"/><g fill="#2c4f27"><circle cx="20" cy="12" r="9"/><circle cx="12" cy="17" r="7"/><circle cx="28" cy="17" r="7"/></g><circle cx="16" cy="13" r="1.6" fill="#e9a93b"/><circle cx="25" cy="16" r="1.6" fill="#e9a93b"/><line x1="0" y1="40" x2="40" y2="40" stroke="#b39b7c" stroke-width="2"/></svg><span><small>Overstory</small><b>Walk my career</b><span class="hl">Seven stops from the real job. You make the call, then see what I did and the proof.</span></span><span class="hm">3 min</span></a></li><li><a class="hrow" href="https://mcoburn-123.github.io/volunteer-engagement/"><svg class="hk" viewBox="0 0 40 42" aria-hidden="true" focusable="false"><path d="M20 40 V26" stroke="#6b5338" stroke-width="3" fill="none"/><g fill="#3f6b3a"><circle cx="20" cy="22" r="7"/><circle cx="14" cy="26" r="5"/><circle cx="26" cy="26" r="5"/></g><circle cx="20" cy="21" r="1.5" fill="#f4efe2"/><line x1="0" y1="40" x2="40" y2="40" stroke="#b39b7c" stroke-width="2"/></svg><span><small>Understory</small><b>The volunteer page</b><span class="hl">How I'd run volunteer engagement, from a first-timer's hello to my first 60 days.</span></span><span class="hm">5 min read</span></a></li><li><a class="hrow" href="#sample"><svg class="hk" viewBox="0 0 40 42" aria-hidden="true" focusable="false"><g fill="#6f8f3a"><ellipse cx="18" cy="31" rx="12" ry="9"/><ellipse cx="28" cy="34" rx="8" ry="6"/></g><g fill="#8a2f52"><circle cx="14" cy="29" r="1.8"/><circle cx="21" cy="33" r="1.8"/><circle cx="28" cy="32" r="1.8"/></g><line x1="0" y1="40" x2="40" y2="40" stroke="#b39b7c" stroke-width="2"/></svg><span><small>Shrub layer</small><b>Play a volunteer shift</b><span class="hl">Your First 15 Minutes. One Saturday in a church basement. It's right below this.</span></span><span class="hm">3 min</span></a></li><li><a class="hrow" href="https://mcoburn-123.github.io/career/?view=proof"><svg class="hk" viewBox="0 0 40 42" aria-hidden="true" focusable="false"><g fill="#8fb070"><ellipse cx="9" cy="37" rx="8" ry="4"/><ellipse cx="21" cy="36" rx="8" ry="5"/><ellipse cx="32" cy="37" rx="7" ry="4"/></g><g fill="#e9a93b"><circle cx="20" cy="31" r="1.5"/><circle cx="31" cy="33" r="1.4"/></g><line x1="0" y1="40" x2="40" y2="40" stroke="#b39b7c" stroke-width="2"/></svg><span><small>Groundcover</small><b>Just the proof</b><span class="hl">Every number and work sample on one plain page. It prints clean.</span></span><span class="hm">30 sec</span></a></li></ul></nav>
+        <p class="hfoot">Hiring for a company team? <a href="https://mcoburn-123.github.io/career/?for=corporate">The same career, in corporate wording.</a></p>
+        <p class="hfoot">English and Spanish. <a href="mailto:malik.coburn123@gmail.com">malik.coburn123@gmail.com</a> · <a href="https://www.linkedin.com/in/m-coburn/" rel="noopener">LinkedIn</a></p>
+      </div>
     </div>
   </div>
-  <svg class="sprouts" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C200 20 400 50 600 30 S1000 10 1200 40 V60Z" fill="#fbf8f2"/></svg>
-</header>
+</header><script>
+/* Phones: crop the guild drawing to the plants; the list under it carries the labels. */
+(function(){var g=document.querySelector('.guild');if(!g)return;var full=g.getAttribute('viewBox'),mq=matchMedia('(max-width:640px)');
+function fit(){g.setAttribute('viewBox',mq.matches?'0 0 300 '+full.split(' ')[3]:full);}
+fit();mq.addEventListener?mq.addEventListener('change',fit):mq.addListener(fit);})();
+</script>
 
 <main class="wrap">
 
