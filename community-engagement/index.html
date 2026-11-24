@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="M Coburn, Chicago: community engagement that starts by mapping who's already doing the work. Needs assessments, partner maps, outreach that reports back, and a tap-through engagement ladder with real examples.">
+<meta property="og:title" content="M Coburn · Community Engagement">
+<meta property="og:description" content="I map who's already doing the work, then build the partnership around them. Needs assessments, partner maps and outreach that reports back, with a 2-minute engagement ladder to tap through.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mcoburn-123.github.io/community-engagement/">
+<meta property="og:image" content="https://mcoburn-123.github.io/og-home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcoburn-123.github.io/og-home.png">
+<link rel="canonical" href="https://mcoburn-123.github.io/community-engagement/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%B1%3C/text%3E%3C/svg%3E">
+<title>M Coburn · Community Engagement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--soil:#2f2a24;--leaf:#3f6b3a;--leaf-2:#5c8f52;--sprout:#e8f0e1;--sun:#e9a93b;--paper:#fbf8f2;--line:#e3ddd2;--muted:#6d655b;--vine:#4d7a3a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--soil);font:17px/1.55 Inter,system-ui,sans-serif}
+a{color:var(--leaf)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.hero{position:relative;overflow:hidden;color:#fff;padding:36px 0 64px;background:radial-gradient(120% 140% at 85% 0%,#5c8f52 0%,#3f6b3a 55%,#33582f 100%)}
+header.hero .sprouts{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:46px}
+.back{color:#fff;opacity:.85;font-size:14px;text-decoration:none}
+.back:hover{opacity:1;text-decoration:underline}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.85;margin:22px 0 10px}
+header.hero h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(28px,5.2vw,42px);line-height:1.12;margin:0 0 12px;max-width:760px}
+header.hero p{margin:0;max-width:660px;font-size:18px;opacity:.95}
+.cta{display:inline-flex;gap:8px;align-items:center;margin-top:20px;background:var(--sun);color:var(--soil);font-weight:600;text-decoration:none;border-radius:999px;padding:12px 22px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.cta:focus-visible,.back:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+section{padding:40px 0 8px}
+h2{font-family:Fraunces,Georgia,serif;font-size:28px;margin:0 0 6px}
+h3{font-size:18px;margin:0 0 8px}
+.lede{color:var(--muted);margin:0 0 22px;max-width:680px}
+.num{font-family:Fraunces,Georgia,serif;color:var(--leaf);font-weight:700}
+
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-34px;position:relative}
+.proof div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 12px;font-size:14px;color:var(--muted);text-align:center;box-shadow:0 6px 20px rgba(47,42,36,.06)}
+.proof .num{display:block;font-size:30px;line-height:1.1;margin-bottom:4px}
+.proof small{display:block;margin-top:4px;font-size:12px;color:#8a8176}
+@media(max-width:760px){.proof{grid-template-columns:1fr 1fr}}
+
+/* lead proof: two projects side by side */
+.pair{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){.pair{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.card .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--leaf-2);margin-bottom:6px}
+.card ul{margin:8px 0 0;padding-left:18px;font-size:15px}
+.card li{margin-bottom:7px}
+.joined{margin-top:14px;background:var(--sprout);border-radius:16px;padding:16px 20px;font-size:16px}
+
+/* ladder */
+.ladder{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}
+.rungs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 18px;padding:0;list-style:none}
+.rungs button{width:100%;font:600 14px/1.2 Inter,system-ui,sans-serif;border:2px solid var(--line);background:var(--paper);color:var(--soil);border-radius:12px;padding:12px 6px 10px;cursor:pointer;position:relative}
+.rungs button .lvl{display:block;font-size:11px;font-weight:600;color:var(--muted);margin-bottom:4px;letter-spacing:.04em}
+.rungs button[aria-pressed="true"]{border-color:var(--leaf);background:var(--sprout)}
+.rungs button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.meter{height:10px;border-radius:99px;background:var(--line);overflow:hidden;margin:0 0 6px}
+.meter span{display:block;height:100%;width:20%;background:linear-gradient(90deg,var(--leaf-2),var(--leaf));border-radius:99px;transition:width .35s cubic-bezier(.2,.8,.3,1)}
+.meterlab{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:16px}
+.rung{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){.rung{grid-template-columns:1fr 1fr}}
+.rung .promise{font-family:Fraunces,Georgia,serif;font-size:22px;line-height:1.25;margin:0 0 8px}
+.rung .when{font-size:15px;margin:0}
+.rung .ex{background:var(--sprout);border-radius:14px;padding:14px 16px;font-size:15px}
+.rung .ex b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#2c4f27;margin-bottom:4px}
+.credit{font-size:13px;color:var(--muted);margin:14px 0 0}
+@media(max-width:560px){.rungs{grid-template-columns:1fr 1fr 1fr}.rungs li:nth-child(n+4){grid-column:span 1}}
+@media (prefers-reduced-motion:reduce){.meter span{transition:none}}
+
+/* pick the rung */
+.quiz{display:grid;gap:14px;grid-template-columns:1fr}
+.q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.q p{margin:0 0 10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{font:500 14px Inter,system-ui,sans-serif;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;cursor:pointer;color:var(--soil)}
+.opts button:hover{border-color:var(--leaf)}
+.opts button[aria-pressed="true"]{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+.opts button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.call{margin-top:12px;font-size:15px;border-left:4px solid var(--leaf-2);padding:4px 0 4px 12px}
+.call[hidden]{display:none}
+
+/* 90 days */
+.days{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:760px){.days{grid-template-columns:repeat(3,1fr)}}
+.days>div{border-top:4px solid var(--vine);background:#fff;border-radius:0 0 16px 16px;padding:16px 18px;font-size:15px}
+.days .when{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--leaf-2);margin-bottom:4px}
+.days ul{margin:6px 0 0;padding-left:18px}
+.days li{margin-bottom:6px}
+.fine{font-size:13px;color:var(--muted);margin-top:12px}
+.next{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.btn{display:inline-block;font-weight:600;font-size:15px;border-radius:999px;padding:11px 20px;background:var(--leaf);color:#fff;text-decoration:none}
+.btn.ghost{background:#fff;color:var(--leaf);border:1px solid var(--line)}
+.btn:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="back" href="/">← M Coburn · portfolio home</a>
+    <div class="eyebrow">Community engagement · the vine layer</div>
+    <h1>I find out who's already doing the work. Then I build the partnership around them.</h1>
+    <p>Needs assessments, partner maps and outreach that reports back. In permaculture you observe before you plant. Same rule on a block.</p>
+    <a class="cta" href="#ladder">Tap through the engagement ladder <span aria-hidden="true">↓</span></a>
+  </div>
+  <svg class="sprouts" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C200 20 400 50 600 30 S1000 10 1200 40 V60Z" fill="#fbf8f2"/></svg>
+</header>
+
+<main class="wrap">
+
+<div class="proof" aria-label="Proof at a glance">
+  <div><span class="num">28</span>communities in a regional food recovery study<small>project manager, 2024–2025</small></div>
+  <div><span class="num">750</span>businesses reached in outreach<small>250+ responses, 41 surveys</small></div>
+  <div><span class="num">73%</span>waste diverted from landfill<small>2024 national convention, Chicago</small></div>
+  <div><span class="num">3</span>states of campaign field work<small>routing, placement, leading crews</small></div>
+</div>
+
+<section id="proof">
+  <h2>Two projects, one method</h2>
+  <p class="lede">One is fieldwork across a region. The other is a city's plan, from the inside. Both started the same way: listen first, map who's there, then decide.</p>
+  <div class="pair">
+    <div class="card">
+      <div class="tag">Observe · regional food recovery study</div>
+      <h3>Who already moves food, and who's tossing it?</h3>
+      <ul>
+        <li>Managed the outreach for a study covering 28 communities and 49 ZIP codes.</li>
+        <li>Reached 750 businesses. 250+ answered, and 41 completed the survey.</li>
+        <li>Built the findings deck and the partner map, later shown in a public webinar.</li>
+        <li>Sent weekly status reports to the project director and tracked hours against budget.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="tag">Involve · a city's clean jobs plan</div>
+      <h3>What would residents actually want built here?</h3>
+      <ul>
+        <li>Research lead on a graduate client project for a California city.</li>
+        <li>Ran the meetings with city staff and interviewed local stakeholders.</li>
+        <li>Wrote the clean tech sectors analysis and the housing and zoning lens.</li>
+        <li>Our pitch back to the city was one plain idea: clean jobs at home.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="joined">What carries over to any neighborhood: a partner map before a plan, outreach people can actually answer, and a report back so they can see what their answers changed.</p>
+</section>
+
+<section id="ladder">
+  <h2>The engagement ladder</h2>
+  <p class="lede">Every engagement makes a promise about how much say people get. Pick the rung before the first meeting and say it out loud. Tap a rung to see the promise and where I've done it.</p>
+  <div class="ladder">
+    <ul class="rungs" role="group" aria-label="Pick a rung">
+      <li><button type="button" data-i="0" aria-pressed="true"><span class="lvl">Rung 1</span>Inform</button></li>
+      <li><button type="button" data-i="1" aria-pressed="false"><span class="lvl">Rung 2</span>Consult</button></li>
+      <li><button type="button" data-i="2" aria-pressed="false"><span class="lvl">Rung 3</span>Involve</button></li>
+      <li><button type="button" data-i="3" aria-pressed="false"><span class="lvl">Rung 4</span>Collaborate</button></li>
+      <li><button type="button" data-i="4" aria-pressed="false"><span class="lvl">Rung 5</span>Empower</button></li>
+    </ul>
+    <div class="meter" aria-hidden="true"><span id="fill"></span></div>
+    <div class="meterlab" aria-hidden="true"><span>Less say for the community</span><span>More say</span></div>
+    <div class="rung" id="rung" aria-live="polite">
+      <div>
+        <p class="promise" id="promise"></p>
+        <p class="when" id="when"></p>
+      </div>
+      <div class="ex"><b>Where I've done it</b><span id="ex"></span></div>
+    </div>
+    <p class="credit">The five rungs come from the IAP2 Spectrum of Public Participation, a standard many cities and agencies use. The promises are paraphrased; the examples are mine.</p>
+  </div>
+</section>
+
+<section id="pick">
+  <h2>Pick the rung</h2>
+  <p class="lede">Three situations I'd expect in the first month. Make your call, then see mine. There's no score. Reasonable people pick differently, and the point is to pick on purpose.</p>
+  <div class="quiz" id="quiz"></div>
+</section>
+
+<section id="days">
+  <h2>My first 90 days</h2>
+  <p class="lede">The same order a grower uses on new ground: read the site, plant small, then tend what took.</p>
+  <div class="days">
+    <div>
+      <div class="when">Days 1–30 · observe</div>
+      <ul>
+        <li>Listening tour: partners, block clubs, schools, elected offices, front-line staff.</li>
+        <li>Map the field: who's anchoring, who's active, who we haven't met.</li>
+        <li>Write down every promise already made to the community, kept or not.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="when">Days 31–60 · plant</div>
+      <ul>
+        <li>Pick the rung for each project and say it out loud.</li>
+        <li>Set a meeting rhythm and one shared tracker partners can see.</li>
+        <li>Two small wins with partners who said yes early.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="when">Days 61–90 · tend</div>
+      <ul>
+        <li>Report back: what we heard, what changed because of it, what didn't and why.</li>
+        <li>Close the loops on every open ask from the listening tour.</li>
+        <li>A one-page scorecard leadership and partners both read.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="fine">A plan to start from. It changes once I've heard from the people it's for, which is the point of days 1–30.</p>
+</section>
+
+<section>
+  <h2>More ways in</h2>
+  <div class="next">
+    <a class="btn" href="/#sample">Play a 3-minute volunteer shift</a>
+    <a class="btn ghost" href="/volunteer-engagement/">The volunteer page</a>
+    <a class="btn ghost" href="https://mcoburn-123.github.io/career/?view=proof">Just the proof</a>
+  </div>
+</section>
+
+</main>
+
+<footer>English and Spanish · <a href="mailto:malik.coburn123@gmail.com">malik.coburn123@gmail.com</a> · Chicago or remote</footer>
+
+<script>
+(function(){
+  var R=[
+    {p:"We'll keep you informed.",w:"When the decision's already made, or it's a safety rule. Be honest that it's information, not a vote.",e:"Campaign field work in three states: routing who gets what, where, and leading the crews who deliver it. Also a weekly newsletter to a 400+ person volunteer community."},
+    {p:"We'll listen, and tell you how your input shaped the decision.",w:"When there are real options and the people affected know something you don't.",e:"The regional food recovery study: 750 businesses reached, 250+ responses, 41 completed surveys, and findings shared back in a public webinar."},
+    {p:"Your concerns will show up in the options we consider.",w:"When the plan isn't set yet and you can still change the shape of it.",e:"The city clean jobs plan: meetings with city staff and stakeholder interviews before a single recommendation got written."},
+    {p:"We'll work out the answer with you, and use your advice as far as we can.",w:"When nobody can do it alone and every partner brings a piece the others lack.",e:"Food recovery at a 2024 national convention in Chicago: 73% diverted from landfill and 25,000+ lbs of food rescued, with venue and food rescue partners each running their part."},
+    {p:"You decide. We'll carry it out.",w:"When the people who live with the result should own it. Rare, and worth it.",e:"Right now I'm project manager on a shared-ownership co-op build in Englewood, where the members make the calls. It's in progress, so no results to claim yet."}
+  ];
+  var btns=[].slice.call(document.querySelectorAll('.rungs button'));
+  var fill=document.getElementById('fill');
+  function show(i){
+    btns.forEach(function(b,j){b.setAttribute('aria-pressed',j===i?'true':'false')});
+    document.getElementById('promise').textContent='“'+R[i].p+'”';
+    document.getElementById('when').textContent='Use it: '+R[i].w;
+    document.getElementById('ex').textContent=R[i].e;
+    fill.style.width=((i+1)*20)+'%';
+  }
+  btns.forEach(function(b,i){b.addEventListener('click',function(){show(i)})});
+  show(0);
+
+  var Q=[
+    {s:"A company wants to run its volunteer day at a neighborhood garden next month. The date's already booked.",m:2,c:"Involve. The date's set, but what the volunteers actually do shouldn't be. Ask the garden what it needs done, then build the day around that. A day designed without the partner leaves them with cleanup."},
+    {s:"A new safety rule for a food distribution site starts Monday. It's not up for debate.",m:0,c:"Inform. Pretending to consult on a rule that's already decided costs trust you'll need later. Explain it plainly, explain why, and say who to call with questions."},
+    {s:"Residents will decide how a co-op spends its first-year surplus.",m:4,c:"Empower. If people own it, they decide it. My job is to make sure the meeting is easy to get to, the numbers are clear, and whatever they pick actually gets done."}
+  ];
+  var names=["Inform","Consult","Involve","Collaborate","Empower"];
+  var quiz=document.getElementById('quiz');
+  Q.forEach(function(q,qi){
+    var d=document.createElement('div');d.className='q';
+    var p=document.createElement('p');p.textContent=q.s;d.appendChild(p);
+    var o=document.createElement('div');o.className='opts';o.setAttribute('role','group');o.setAttribute('aria-label','Pick a rung');
+    var c=document.createElement('p');c.className='call';c.hidden=true;c.setAttribute('aria-live','polite');
+    names.forEach(function(n,ni){
+      var b=document.createElement('button');b.type='button';b.textContent=n;b.setAttribute('aria-pressed','false');
+      b.addEventListener('click',function(){
+        [].forEach.call(o.children,function(x){x.setAttribute('aria-pressed','false')});
+        b.setAttribute('aria-pressed','true');
+        c.textContent=(ni===q.m?'Same call as me. ':'You picked '+n+'. My call: ')+q.c;
+        c.hidden=false;
+      });
+      o.appendChild(b);
+    });
+    d.appendChild(o);d.appendChild(c);quiz.appendChild(d);
+  });
+})();
+</script>
+</body>
+</html>
